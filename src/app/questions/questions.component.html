@@ -16,8 +16,8 @@
 
     <form>
         <div class="form__buttons">
-            <button type="button" class="previous-question-button" (click)='goToPrevQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter < 1 }" > Previous </button>
-            <button type="button" class="next-question-button"     (click)='goToNextQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter === numberOfQuestions-1 }" >Next </button>
+            <button type="button" class="buttonMain previous-question-button" (click)='goToPrevQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter < 1 }" > Previous </button>
+            <button type="button" class=" buttonMain next-question-button"     (click)='goToNextQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter === numberOfQuestions-1 }" >Next </button>
 
             <!-- <button type="button" class="btn previous-question-button" (click)='goToPrevQuestion()'> Previous </button>
             <button type="button" class="btn next-question-button"     (click)='goToNextQuestion()'> Next     </button> -->
@@ -40,7 +40,7 @@
     </form>
     
     
-    <button type="button" class="btn score-button"  (click)='goToScorePage()' *ngIf="questionsCounter === numberOfQuestions-1" [ngClass]="{ loading : isLoading }"> See results </button>
+    <button type="button" class="buttonMain score-button"  (click)='goToScorePage()' *ngIf="questionsCounter === numberOfQuestions-1" [ngClass]="{ loading : isLoading }"> See results </button>
 </div>
 
 

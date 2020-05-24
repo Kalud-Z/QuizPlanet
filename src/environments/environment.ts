@@ -6,7 +6,9 @@ export const environment = {
   production: false,
 
 
-  pointsPerCorrectAnswer : 25
+  pointsPerCorrectAnswer : 25,
+
+  introAnimation : false
 
 };
 

@@ -1,0 +1,7 @@
+**change the rest of the buttons
+
+**create firebase project , link it to this . 
+
+**change color of title. (blend stuff)
+
+

@@ -2,20 +2,25 @@ import { trigger, style, transition, animate, query, group, stagger, keyframes, 
 
 
 export const zipperTrigger = trigger('zipperState' , [
-    // state('hidden', style({
-    //     opacity : 0
-    //   })),
-    // transition('*=>hidden', animate('1000ms'))
+    transition('* => *' , [
+        group([
+            query('.right , .left' , [
+                stagger(45 , [
+                    animate('.01s' , style({ opacity : 0 })),
+                ]),
+                animate('.2s 5s')
+            ] , { optional : true }),
+            query('.zipper', [
+                animate('3s 0.15s' , style({
+                    top : '107%'
+                }))
+                // animate('.2s 5s')
+            ] ,{ optional : true })
+        ])
+       
+    ])
 
-    transition('* => hidden' , [
-    //    query('.right', style({ opacity: 0 })),
-       style({ opacity : 1 }),
-       animate('1.5s ease-in-out', style({ opacity : 0 }))
-    //    query('.right', animate(1000, style({ opacity: 0 }))),
-      ]), //transition
-
-
-])
+]);
 
 
 

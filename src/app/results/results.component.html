@@ -5,8 +5,8 @@
     <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  [overallScore]='overallScore' >  {{ finalScoreInPercentage }} % </p>
 
     <div class="results-container__buttons-container">
-        <button type="button"  class="btn answers-button" (click)='onShowAnswers()'>  Check out Answers </button>
-        <button type="button"  class="btn play-again-button" (click)='onPlayAgain()'>  play again </button>
+        <button type="button"  class="buttonMain answers-button" (click)='onShowAnswers()'>  Check out Answers </button>
+        <button type="button"  class="buttonMain play-again-button" (click)='onPlayAgain()'>  play again </button>
     </div>
    
 
@@ -18,7 +18,10 @@
 
 <div class="answers-container" *ngIf='showAnswers' >
 
-    <button class="btn go-back-button" (click)='goBackToScore()'> <   Go back </button>
+    <button class="buttonMain go-back-button" (click)='goBackToScore()'>
+        <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>
+        <span class="go-back-button__text"> Go back</span>
+    </button>
     
     <table class="table">
 

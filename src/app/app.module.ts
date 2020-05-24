@@ -16,7 +16,8 @@ import { ResultsComponent } from './results/results.component';
 import { BlurredSurfaceComponent } from './shared/blurred-surface/blurred-surface.component';
 import { DisplayScoreDirective } from './results/directives/display-score.directive';
 import { TrackBarDirective } from './questions/directives/track-bar.directive';
-import { BlockButtonDirective } from './questions/directives/block-button.directive'; // CLI imports AppRoutingModule
+import { BlockButtonDirective } from './questions/directives/block-button.directive';
+import { IntroAnimationDirective } from './intro-animation.directive'; // CLI imports AppRoutingModule
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BlockButtonDirective } from './questions/directives/block-button.direct
     BlurredSurfaceComponent,
     DisplayScoreDirective,
     TrackBarDirective,
-    BlockButtonDirective
+    BlockButtonDirective,
+    IntroAnimationDirective
   ],
   imports: [
     BrowserModule,

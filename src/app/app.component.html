@@ -1,15 +1,12 @@
 
 
 
-<!-- <button class="start"> sdgdgsg </button> -->
+<div class='container' [ngClass]="{ loading : isLoading } ">
 
-
-<div class='container' [ngClass]="{ loading : isLoading }">
-
-  <div class="mainWrapper">
-    <div class="mainWrapper__head">
+  <div class="mainWrapper" [ngClass]="{ mainWrapperFinalPosition : adjustMainWrapper}">
+    <div class="mainWrapper__head"  [ngClass]="{ 'head-padding' : !introAnimationOn }" >
       
-      <div class="AppTitle"> 
+      <div class="AppTitle" [ngClass]="{ 'remove-element' : introAnimationOn }"> 
         <span class="AppTitle__letter"> &nbsp;</span>
         <span class="AppTitle__letter">Q</span>
         <span class="AppTitle__letter">u</span>
@@ -23,9 +20,11 @@
         <span class="AppTitle__letter">e</span>
         <span class="AppTitle__letter">t</span>
         <span class="AppTitle__letter"> &nbsp;</span>
-      </div>   
+      </div> 
+      
+      <h1 class="mainWrapper__head__title"  [ngClass]="{ 'remove-element' : !introAnimationOn }" > Quiz Planet </h1>
 
-    </div>  <!-- mainWrapper__head -->
+    </div> <!-- mainWrapper__head -->
 
 
     <div class="mainWrapper__body">
@@ -36,154 +35,136 @@
 
 
 
-    
-  <div class="introDoor">
 
-    <div class="introDoor__left"  [ngClass]="{ 'pull-left-side' : openDoorNow}" ></div>
-    <div class="introDoor__right" [ngClass]="{ 'pull-right-side' : openDoorNow}" ></div>
-    <div class="introDoor__line"></div>
+  
 
+<div class="introDoor" [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
 
-  </div>
+  <div class="introDoor__left"  [ngClass]="{ 'pull-left-side' : openDoorNow}" ></div>
+  <div class="introDoor__right" [ngClass]="{ 'pull-right-side' : openDoorNow}" ></div>
+  <div class="introDoor__line" [ngClass]="{ 'introDoor__line-goDown' : animateZipperNow }" ></div>
 
-
-
+</div>
 
 
-  <!-- <div class="zipper-container" [@zipperState]="hideElement"> -->
-    <div class="zipper-container">
-      <img class="zipper" src="../assets/zipper.svg" alt="">
+  <div class="zipper-container"  [@zipperState]="animateZipperNow"  [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
+    <img class="zipper" src="../assets/zipper.svg" alt="" >
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <!-- 10 -->
+    <!-- 10 -->
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <!-- 10 -->
+    <!-- 10 -->
 
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <!-- 10 -->
+    <!-- 10 -->
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
+    <div class="left"></div>
 
-      
-      <div class="right"></div>
-      <div class="left"></div>
-
-      <div class="right"></div>
-      <div class="left"></div>
-
-      <div class="right"></div>
-      <div class="left"></div>
-
-      <div class="right"></div>
-      <div class="left"></div>
-
-      <div class="right"></div>
-      <div class="left"></div>
-
-      <div class="right"></div>
-      <div class="left"></div>
+    <div class="right"></div>
 
 
 
+    <!-- all 37 * 2 -->
 
-      <!-- 7 -->
+</div>
 
-  </div>
 
 
 
 
 </div>
+
+
 
 
 
