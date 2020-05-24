@@ -1,0 +1,16 @@
+:host {
+    height:100vh;
+    width: 100vw;
+    position : fixed;
+    top: 0;
+    right:0;
+
+    background-color: rgba(255, 0, 0, 0.137);
+
+    filter:blur(2px);
+
+    cursor: wait;
+}
+
+
+

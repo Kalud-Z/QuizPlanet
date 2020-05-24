@@ -1,0 +1,201 @@
+@import 'src/buttons.scss';
+
+
+// * { border : 1px solid yellow }
+
+:host {
+    // background-color: red;
+    display : block;
+    height: 100%;
+}
+
+
+
+.question-container {
+    position: relative;
+    text-align: center;
+    background-color: #d9d9d9;
+    max-width: 80%;
+    height: auto;
+    // margin: 5% auto;
+    margin: 5vh auto;
+    padding-bottom: 0.009rem;   // u have to give it a lil bit of paddin , otherwise the bottom-margin of next button woulndt take place !
+    font-size: 1.6rem;
+    border-radius: 0.3rem;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
+    box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
+    
+    // it start hidden
+    // display:none;
+    // opacity: 0;
+    // visibility: hidden;
+
+    // @include respond(phone) {
+    //     max-width: 83%;
+    //     margin: 10% auto;
+    // }
+
+    // @include respond(phone-small) { max-width: calc( 100% - #{$body-padding-top}); }
+
+
+    &__title {
+        padding: 1.5rem 0;
+        padding-top: 2.5rem;
+        border-bottom: 1.5px solid black;
+        font-size:2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    & form {
+        flex : 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.form__buttons {
+    display : grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:6rem;
+
+    align-self: center;
+    margin-bottom: 2rem;
+
+    & button {
+        position : relative;
+    }
+}
+
+.questionAndOptionsContainer {
+    overflow:hidden;
+    display : flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-bottom: 2.5rem;
+    
+    & >:not(:last-child) {
+        margin-bottom: 1rem;
+    } 
+}
+
+
+.question {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    // transform: translateX(92rem);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(.7,.09,.83,1.13);
+}
+
+
+
+
+// #########################################################   form ###############################################################################
+
+
+
+.form {
+    padding-left: 4rem !important;
+    margin-bottom: 3rem;
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after { opacity: 1; }
+    
+    &__label {
+        transition: all .3s;
+    }
+
+
+    &__radio-group {
+        display: inline-block;
+        margin-left: 2rem;
+        transition: all 0.5s;
+        transition-timing-function: cubic-bezier(.7,.09,.83,1.13);
+    }
+
+    &__radio-label {
+        font-size: 1.55rem;
+        cursor: pointer;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__radio-button {
+        height: 2rem;
+        width: 2rem;
+        border : 2px solid rgb(211, 92, 92);
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        margin-right: 2rem;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            background-color: red;
+            border-radius: inherit;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50% , -50%);
+            opacity: 0;
+            transition: all .4s;
+        }
+    }
+}
+
+
+
+// ##########################################################    TRACK BAR  ###################################################################
+
+
+
+.questions-track-bar {
+    width : 100%;
+    height: 1rem;
+    border-radius: 5px;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: stretch;
+
+    &__child { 
+        background: linear-gradient(to right, rgba(245, 16, 176, 0.5) 50%, rgba(245, 16, 176, 0.089) 50%);  // blue is the starting color of the div. then it transition into red upon hover.
+        background-size: 200% 100%;
+        background-position:right bottom;
+        transition:all 1s ease;
+        flex : 1;
+        border-right: 5px solid white;
+        &:last-child { border: none; }
+    }
+}
+
+
+
+.fill-bar {
+    background-position: left bottom !important;
+}
+
+
+
+.buttonBlockerDiv {
+    position : absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.486);
+    cursor : not-allowed;
+}
+

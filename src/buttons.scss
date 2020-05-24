@@ -1,0 +1,231 @@
+// @import 'src/buttons.scss';
+
+
+
+
+.btn {
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    text-transform: uppercase;
+    outline: none;
+    font-family: 'Roboto Slab', serif;
+
+    @media (hover: none) {
+        a:hover { color: inherit; }
+    }
+}
+
+    
+.start-button {
+    width: 12.5rem;
+    height: 5rem;
+    background-color: #5598345b;
+    color: rgba(0, 0, 255, 0.199);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.25rem;
+    border:0.1rem solid  #207db341;
+    margin-top: 3rem;
+
+   
+
+    @media only screen and (min-width: 75em) {
+        position: absolute;
+        top:50%;
+        right:-47%;
+        transform: translate(-50%,-50%); 
+        margin-top: 0;
+    }
+
+    /* @include respond(tab-land) {
+        position: relative;
+    } */
+
+}
+
+
+
+.prev-question-button , .exit-button {
+    cursor: pointer;
+    position:  absolute;
+    top:2rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    // start hidden . only shows startin from question 2
+    display: none;
+    
+    & svg {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+.prev-question-button {
+    left : 5px;
+    & svg { fill: rgba(238, 50, 44, 0.884);}
+}
+
+.exit-button {
+    right : 5px;
+    & svg { fill: rgb(0, 0, 0); }
+}
+
+
+.next-question-button , .previous-question-button , .score-button {
+    outline : none;
+    box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	// background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+	background-color:#fc8d83;
+	border-radius:1rem;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1.5rem;
+	font-weight:bold;
+	padding:1rem 3rem;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #b23e35;
+    text-transform: uppercase;
+    
+    &:active {
+        position:relative;
+        top:1px;
+    }
+}
+
+
+.score-button {
+    background:linear-gradient(to bottom, #a698da 5%, #604ab3 100%);
+    border-radius:.7rem;
+    margin-top: 4rem;
+    margin-bottom: .7rem;
+}
+
+
+.next-question-button {
+	background:linear-gradient(to bottom, #e2a59f 5%, #d38f89 100%);
+}
+
+.button-blocked {
+    opacity: 0.5 !important;
+    cursor : not-allowed !important;
+
+    &:active {
+        position:relative;
+        top:0px;
+    }
+}
+
+.previous-question-button {
+	background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+}
+
+
+.answers-button , .play-again-button  {
+    // width: 18rem;
+    height: 3.65rem;
+    padding: 0 1rem;
+    background-color: rgba(255, 0, 221, 0.692);
+    color: beige;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+
+    // @include respond(phone-small) {
+      /*    display: block;
+        margin:0 auto !important;
+        &:first-child {
+            margin-bottom: 1.5rem !important;
+            background-color: rgba(0, 128, 0, 0.781);
+        }
+        &:last-child { width: 40%; }
+    }
+
+    &:hover {
+        background-color: rgba(196, 9, 171, 0.829);
+    } */
+}
+
+.play-again-button {
+    margin-left: 2rem;
+}
+
+.go-back-button {
+    // width: 13rem;
+    height: 3.85rem;
+    background-color: rgba(0, 174, 255, 0.692);
+    color: beige;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-left:1rem;
+    padding: 0 2rem;
+    &:hover { background-color: rgba(0, 102, 255, 0.63); }
+
+    &--replacement {
+
+        &-Container {
+            position: absolute;
+            top: 122%;
+            left: 6%;
+ 
+            // @include respond(tab-port) { left: 5%; }
+            // @include respond(phone) { top: 61%; left:-1%; } 
+            transition:all .5s;
+
+            // it start hidden. it appears on scroll
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+
+        }
+
+        width: 46px;  // I had to ! because otherwise , the SVG would have uncalled-for margins in Firefox !
+        height: 3rem;
+        fill:  rgba(0, 174, 255, 0.692);
+        &:hover { fill: rgba(0, 102, 255, 0.63); }
+        // &:hover { fill: yellow }
+
+    }
+}
+
+.yes , .no {
+    width: 7rem;
+    padding: 1rem 0;
+    background-color: #a3218e ;
+    color: rgb(238, 228, 228);
+    border:none;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: #771266 ;
+    }
+
+}
+
+.yes {
+    margin-right: 4rem; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

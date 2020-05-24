@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+
+
+
+
+// <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Raleway:900&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Mali:400,500,700&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+
+
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html { // this defines what 1 rem is : 1rem = 10px
+    font-size: 62.5%;  /* this is the root font-size ! | and = 62.5% of the default browser font-size which is usually 16px ==> final value 10px */ 
+
+}
+
+
+body { /* all the stuff in here , will be inherited to the child elements.*/
+    box-sizing: border-box;
+}
+
+
+// ########################################################         MIXINS         ####################################################
+
+
+
+
+// ########################################################         VARS         ####################################################
+
+
+
+
+
+
+// ########################################################         OTHER         ####################################################
+
+
+
+.loading {
+    cursor : wait !important;
+    filter:blur(2px);
+
+    // background-color: red !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

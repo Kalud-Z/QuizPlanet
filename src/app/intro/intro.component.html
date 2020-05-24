@@ -1,0 +1,77 @@
+
+
+    
+<div class="selectNumberAndDifficultyWrapper">
+
+    <div class="start-page-container__select-number-container">
+        <label for="num-select"> Number of Questions </label>
+        <select name="number" id="num-select" class="number-of-questions-to-play"  [(ngModel)]="numberOfQuestions">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+        </select>
+    </div> 
+    
+    <div class="start-page-container__select-difficulty-container">
+        <label for="diff-select"> Difficulty  </label>
+        <select name="number" id="diff-select" class="difficulty" [(ngModel)]="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
+    <div class="start-page-container__toggleTimer-container">
+        <span class="start-page-container__toggleTimer-container-text"> Timer </span>
+
+        <div class="toggleTimerSwitch" (click)="toggleTimer()">
+            <span class="toggleTimerSwitch__button" [ngClass]="{ 'toggleTimerSwitch-On' : timerOn }"> </span>
+        </div>
+        
+    </div>  
+
+</div>
+
+
+<div class="catsContainer">
+    <figure class="catWrapper" (click)="catChosen('sports')"  [ngClass]="{ selected : chosenCatName === 'sports' }" @introImagesState>
+        <caption class="catWrapper__name"> Sports </caption> <img src="../assets/img/sports.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+
+    <figure class="catWrapper" (click)="catChosen('animals')" [ngClass]="{ selected : chosenCatName === 'animals' }" >
+        <caption class="catWrapper__name"> Animals </caption> <img src="../assets/img/animals.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+
+    <figure class="catWrapper" (click)="catChosen('computer-science')" [ngClass]="{ selected : chosenCatName === 'computer-science' }" >
+        <caption class="catWrapper__name"> Computer Science </caption> <img src="../assets/img/computer-science.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+
+    <figure class="catWrapper" (click)="catChosen('movies')" [ngClass]="{ selected : chosenCatName === 'movies' }" >
+        <caption class="catWrapper__name"> Movies </caption> <img src="../assets/img/movies.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+
+    <figure class="catWrapper" (click)="catChosen('music')" [ngClass]="{ selected : chosenCatName === 'music' }" >
+        <caption class="catWrapper__name"> Music </caption> <img src="../assets/img/music.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+
+    <figure class="catWrapper" (click)="catChosen('politics')" [ngClass]="{ selected : chosenCatName === 'politics' }" >
+        <caption class="catWrapper__name"> Politics </caption> <img src="../assets/img/politics.jpg" alt="sports" class="catWrapper__image">
+    </figure>
+</div>
+
+
+<button type="button" class="btn start-button" [ngClass]="{ playButtonActivated : chosenCatName }" (click)='displayQuestions()' > play </button>
+
+                
+<app-blurred-surface *ngIf='isLoading'></app-blurred-surface>
+
+
+
+
+
+
+
+
+

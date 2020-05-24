@@ -1,0 +1,11 @@
+
+// @import 'src/mixins.scss';
+
+
+@mixin gridCenter {
+    display :grid;
+    justify-content: center;  //  center content horizontally
+    align-content: center;  //center content vertically
+}
+
+

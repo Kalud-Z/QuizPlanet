@@ -1,0 +1,51 @@
+
+<!-- <button (click)='ticktest()'>sgsdzdhdu</button> -->
+
+
+  <div class="question-container "> <!-- ##################################################################################### -->
+        
+        <div class="questions-track-bar" appTrackBar [currentQuestionIndex]='questionsCounter'>
+                <div class="questions-track-bar__child" id="i" *ngFor='let bar of questionsAndOptions; let i = index'  > &nbsp;</div>
+                <!-- <div class="questions-track-bar__child" id="1"  > &nbsp;</div> -->
+                <!-- <div class="questions-track-bar__child" id="2"  > &nbsp;</div> -->
+                <!-- <div class="questions-track-bar__child" id="3"  > &nbsp;</div> -->
+        </div> 
+
+        <!-- <button class="prev-question-button"> <svg> <use href="./img/symbol-defs.svg#icon-circle-left"></use> </svg> </button>   -->
+         <h1 class="question-container__title"> Question Number {{ questionsCounter + 1 }} </h1> 
+
+        <form>
+            <div class="form__buttons">
+                <button type="button" class="previous-question-button" (click)='goToPrevQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter < 1 }" > Previous </button>
+                <button type="button" class="next-question-button"     (click)='goToNextQuestion()' [ngClass]="{ 'button-blocked' : questionsCounter === numberOfQuestions-1 }" >Next </button>
+
+                <!-- <button type="button" class="btn previous-question-button" (click)='goToPrevQuestion()'> Previous </button>
+                <button type="button" class="btn next-question-button"     (click)='goToNextQuestion()'> Next     </button> -->
+            
+            </div>
+
+            <div class="questionAndOptionsContainer" >
+                <p class="question" [@nextQuestionState]="questionsCounter"> {{ questionsAndOptions[questionsCounter].question }} </p>
+
+                <div class="form__radio-group"   *ngFor="let option of questionsAndOptions[questionsCounter].options; let i = index" (click)="answerChosen(option)">
+                    <input type="radio" name="possible-answer" [value]="['option'+i]" class="form__radio-input" [id]="['option'+i]">
+                    <label [for]="['option'+i]" class="form__radio-label" [@nextQuestionState]="questionsCounter">
+                        <span class="form__radio-button"></span>
+                        <span [class]="['option-'+i+'-text']" > {{ option }}</span>
+                    </label>
+                </div> 
+
+            </div>
+           
+        </form>
+        
+        
+        <button type="button" class="btn score-button"  (click)='goToScorePage()' *ngIf="questionsCounter === numberOfQuestions-1" [ngClass]="{ loading : isLoading }"> See results </button>
+    </div>
+
+
+
+
+
+
+
