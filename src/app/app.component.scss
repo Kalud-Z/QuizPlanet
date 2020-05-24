@@ -1,6 +1,7 @@
 @import 'src/mixins.scss';
 
 
+// * { border :1px solid green}
 
 .container {
     background-image: linear-gradient(#172e7c, #55983400);
@@ -9,6 +10,7 @@
     display: flex;
     overflow: hidden;
     transition: all .5s ease-out;
+    position : relative;
 
     @include gridCenter;
 }
@@ -51,8 +53,6 @@
 
 
 
-
-
 .AppTitle {
     width: 29rem;
     // @include respond(phone) { width: 26.6rem;}
@@ -82,3 +82,163 @@
 .display-Letter {
     margin-right: 0rem !important;
 }
+
+
+
+
+
+
+// ################################################################    INTRO DOOR ##################################################################
+
+.introDoor {
+    // background-color: grey;
+    z-index: 10;
+    // z-index: 100;
+    position: fixed;
+    height : 100%;
+    width  : 100%;
+    
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.3rem;
+    // position: relative;
+    
+    // display: none;
+
+    &__line {
+        // height: 55rem;
+        height: 100%;
+        width: 1.5rem;
+        background-color: #1A317D;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform : translate(-50%,-50%);
+        transition: all 2.9s linear;
+    }
+
+    &__left , &__right {
+        transition: all 2s ease-out;
+        transform : translateX(0);
+    }
+
+    &__left {
+        background: rgb(24,47,124);
+        background: linear-gradient(270deg, rgba(24,47,124,1) 0%, rgba(255,255,255,1) 100%);
+    }
+
+    &__right {
+        background: rgb(24,47,124);
+        background: linear-gradient(90deg, rgba(24,47,124,1) 0%, rgba(255,255,255,1) 100%);
+    }
+
+}
+
+.pull-right-side {
+    transform : translateX(100%);
+}
+
+
+.pull-left-side {
+    transform : translateX(-100%);
+}
+
+
+
+
+// #####################################################################    ZIPPER ########################################################
+
+
+
+
+.zipper-container {
+    // display : none !important;
+    height: 100vh;
+    // background-color: red;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+    z-index: 20;
+    // margin-top: -1rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    
+}
+
+
+.zipper {
+    // display : none;
+    
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    top: 5.5%;
+    left: 50%;
+    transform: translate(-52.3%, -50%);
+    z-index: 356;
+    transition: all 3s linear;
+    fill : grey;
+    grid-column: 1 / 2;
+
+}
+
+
+
+.left , .right {
+    width: 20px;
+    height: 1rem;
+    background-color: grey;
+    border:2px solid black;
+    border-radius:3px;
+    justify-self: center;
+    grid-column: 1 / 2;
+
+}
+
+.left {
+    transform: translateX(5px);
+}
+
+
+.right {
+    transform: translateX(-5px);
+}
+
+
+.hide {
+    opacity: 0 !important; 
+}
+
+
+.zipper-goDown {
+    top: 107%;
+}
+
+
+
+.introDoor__line-goDown {
+    transform : translate(-50%, 50%)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

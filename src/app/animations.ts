@@ -1,4 +1,23 @@
-import { trigger, style, transition, animate, query, group, stagger, keyframes } from '@angular/animations';
+import { trigger, style, transition, animate, query, group, stagger, keyframes, state } from '@angular/animations';
+
+
+export const zipperTrigger = trigger('zipperState' , [
+    // state('hidden', style({
+    //     opacity : 0
+    //   })),
+    // transition('*=>hidden', animate('1000ms'))
+
+    transition('* => hidden' , [
+    //    query('.right', style({ opacity: 0 })),
+       style({ opacity : 1 }),
+       animate('1.5s ease-in-out', style({ opacity : 0 }))
+    //    query('.right', animate(1000, style({ opacity: 0 }))),
+      ]), //transition
+
+
+])
+
+
 
 
 export const nextQuestionTrigger = trigger('nextQuestionState', [

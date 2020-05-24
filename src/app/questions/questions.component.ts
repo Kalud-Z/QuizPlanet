@@ -23,6 +23,7 @@ export class QuestionsComponent implements OnInit {  //#########################
 
   isLoading = false;
 
+
   constructor(private dataService : DataService, private router : Router) { }
 
   ngOnInit(): void {

@@ -20,7 +20,7 @@ export class IntroComponent implements OnInit { //##############################
   timerOn : boolean = false;
   isLoading = false;
   // @HostBinding('@introPageState') routeAnimation = true;
-  @HostBinding('@introImagesState') routeAnimationn = true;
+  // @HostBinding('@introImagesState') routeAnimationn = false;
 
 
   catMap = {
