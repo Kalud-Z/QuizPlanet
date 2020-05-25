@@ -1,5 +1,5 @@
 
-<div class="results-container" *ngIf='showAnswers'> 
+<div class="results-container" *ngIf='!showAnswers'> 
 
     <h1 class="results-container__title" > You Final Score is : </h1>
     <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  [overallScore]='overallScore' >  {{ finalScoreInPercentage }} % </p>
@@ -15,7 +15,7 @@
 
 
 
-<div class="answers-container" *ngIf='!showAnswers' >
+<div class="answers-container" *ngIf='showAnswers' >
 
     <button class="buttonMain go-back-button" (click)='goBackToScore()'>
         <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>

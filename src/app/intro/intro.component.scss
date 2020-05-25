@@ -96,6 +96,7 @@
     }
 
     &__toggleTimer-container {
+        
         border-top-right-radius: 5px;
 
         display: flex;
@@ -111,6 +112,8 @@
         font-size: 1.6rem;
         padding: 1rem 1rem;  
         // @include respond(phone-small) { padding: 1.5rem; }
+
+        // display : none;
 
         &-text {
             margin-bottom:.4rem; 
