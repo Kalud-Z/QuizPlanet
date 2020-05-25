@@ -12,6 +12,11 @@
     transition: all .5s ease-out;
     position : relative;
 
+    @include respond(tab-port-small) {
+        overflow: auto;
+        overflow-y : scroll;
+    }
+
     @include gridCenter;
 }
 

@@ -8,7 +8,7 @@ export const environment = {
 
   pointsPerCorrectAnswer : 25,
 
-  introAnimation : true
+  introAnimation : false
 
 };
 

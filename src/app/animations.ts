@@ -4,8 +4,8 @@ import { trigger, style, transition, animate, query, group, stagger, keyframes, 
 export const zipperTrigger = trigger('zipperState' , [
     transition('* => *' , [
         group([
-            query('.right , .left' , [
-                stagger(45 , [
+            query('.right , .left', [
+                stagger(50 , [
                     animate('.01s' , style({ opacity : 0 })),
                 ]),
                 animate('.2s 5s')
@@ -15,7 +15,7 @@ export const zipperTrigger = trigger('zipperState' , [
                     top : '107%'
                 }))
                 // animate('.2s 5s')
-            ] ,{ optional : true })
+            ] , { optional : true })
         ])
        
     ])

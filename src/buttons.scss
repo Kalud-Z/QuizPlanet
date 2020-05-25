@@ -1,4 +1,5 @@
 // @import 'src/buttons.scss';
+@import 'src/mixins.scss';
 
 
 
@@ -27,6 +28,10 @@
     letter-spacing: 0.25rem;
     border:0.1rem solid  #207db341;
     margin-top: 3rem;
+
+    @include respond(tab-port) {
+        margin : 0 4rem;
+    }
 
    
 
@@ -60,7 +65,8 @@
 	font-family:Arial;
 	font-size:1.5rem;
 	font-weight:bold;
-	padding:1rem 3rem;
+    // padding:1rem 3rem;
+    padding: 1vw 3vw;
 	text-decoration:none;
     text-shadow:0px 1px 0px #b23e35;
     text-transform: uppercase;

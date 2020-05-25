@@ -1,4 +1,11 @@
 
+@import 'src/mixins.scss';
+
+
+
+* {
+    // border :1px solid yellow
+}
 
 :host {
     // background-color: red;
@@ -6,32 +13,38 @@
     height: 100%;
     display : grid;
     grid-template-rows: min-content 1fr;
-    // grid-template-rows: 8rem 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;  //  center content horizontally
     align-content: center;  //center content vertically
-    
+
     position: relative;
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr 1fr min-content;
+        padding : 0 4vw;
+        grid-row-gap: 4vw;
+    }
+
+    @include respond(phone-small) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3 , min-content);
+    }
 }
 
 
-// * { border : 1px solid yellow}
+// ##############################################################################################################################################################
 
 
 
 .start-page-container {
 
-    // display: flex !important;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-
-    // // display:none;
-
-    
     &__select-number-container {
         margin-right: .3rem;
         border-top-left-radius: 5px;
+
+        @include respond(phone-extra-small) {
+            // margin-right: 0
+        } 
     }
 
 
@@ -40,24 +53,27 @@
         justify-content: center;
         align-items: center;
 
-
-        width:30rem; 
-        // @include respond(phone) { width:23rem; }
-        // @include respond(phone-small) { 
-        //     width:18rem;
-        //     flex-direction: column;
-        // }
-        // @include respond(myExperia) { width:13rem; }
+        width:30vw; 
 
         background-color: #d9d9d9;
-        // width: 60%;
         font-size: 1.6rem;
         padding: 1.5rem;
+
+        @include respond(phone-extra-small) {
+            flex-direction: column;
+            padding: 1rem;
+        }
 
 
         & label { 
             margin-right: .4rem; 
-            // @include respond(phone-small) { margin-bottom: 2rem; } 
+            @include respond(phone-extra-small) {
+                margin-bottom : 1rem;
+            }
+
+            @include respond(phone-extra-small) {
+                text-align: center;
+            } 
          }
 
         & select  {
@@ -65,6 +81,16 @@
             font-size: 1.6rem;
             border-radius: 4px;
             color: rgb(156, 12, 12);
+
+            & option {
+                // @include respond(phone-extra-small) {
+                //     background-color: blue;
+                //     padding : 0;
+                //     height: 1rem;
+                //     width: 4rem;
+                // } 
+            }
+
         }
 
     }
@@ -88,13 +114,13 @@
 
         &-text {
             margin-bottom:.4rem; 
-            // @include respond(phone-small) { margin-bottom:0;}
+            @include respond(phone-extra-small) {text-align : center }
         }
 
     }
 
 }
-
+ 
 
 .selectNumberAndDifficultyWrapper {
     margin-top: 2rem;
@@ -103,14 +129,26 @@
     justify-self: center;
     display: flex;
     align-items: stretch;
-    // justify-content: space-evenly;
+   
+    @include respond(phone-small) {
+        grid-row: 1 / 2;
+    }
 
-
-    & > div {
-        // @include respond(phone-small) {justify-content: space-between;}
+    & > * {
+        @include respond(phone-extra-small) {
+            display : grid;
+            grid-template-columns: min-content;
+            jusitfy-content : center;
+            align-items: end;
+        } 
     }
    
+
+
 }
+
+
+// ##############################################################################################################################################################
 
 
 .categories-container {
@@ -118,35 +156,54 @@
 }
 
 
-// ##############################################################################################################################################################
-
-
-
 .catsContainer {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    // margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 15rem);
     grid-template-rows: repeat(2, 15rem);
     grid-gap: 2rem;
     justify-content: center;
     align-content: center;
-    // background-color: blue;
-}
 
+    
+    @include respond(tab-port) {
+        grid-column: 1 / 3;
+    }
+
+     @include respond(tab-port-small) {
+        grid-template-columns: repeat(2, 15rem);
+        grid-template-rows: repeat(3, 15rem);
+        margin-bottom: 4vw;
+    }
+
+    @include respond(phone-small) {
+        grid-column: 1 / -1;
+        margin-bottom: 3rem;
+        margin-bottom: 0vw;
+    }
+
+
+}
 
 
 .catWrapper {
     position: relative;
+    display : grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
     &__name {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        // justify-self: center;
+        align-self: center;
         // display : none;
         z-index: 10;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform : translate(-50%, -50%);
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform : translate(-50%, -50%);
         font-size: 2rem;
         font-weight: bolder ;
         line-height: 130%;
@@ -155,9 +212,19 @@
         transition : all 0.2s;
         opacity : 0;
         pointer-events: none;
+
+        @include respond(phone) {
+            // transform : translate(-50%, -50%);
+            opacity : 1;
+            align-self: end;
+            padding : 1rem;
+            background-color: rgba(0, 0, 0, 0.514);
+        }
     }
 
     &__image {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
         width: 100%;
         z-index: 1;
         transition : all 0.2s;
@@ -175,17 +242,8 @@
 
 }
 
-// .catWrapper__image:hover .catsContainer {
-//     opacity : 0;
-// }
 
-
-
-.start-button {
-   
-}
-
-
+// ##############################################################################################################################################################
 
 
 
@@ -216,9 +274,13 @@
     transition : all 0.25s;
     cursor : not-allowed;
     outline : none;
+
+    @include respond(phone-small) {
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        margin-bottom: 3rem;
+    }
 }  
-
-
 
 
 .toggleTimerSwitch {
@@ -253,6 +315,11 @@
     & .catWrapper__image {
         filter: brightness(50%);        
         box-shadow: 0px 0px 3px 2px rgba(209,27,27,1);
+        // @include respond(phone) {
+        //     filter: brightness(0%);        
+        //     // box-shadow: 0px 0px 6px 4px rgba(209,27,27,1);
+        //     // box-shadow: 0px 0px 6px 4px yellow;
+        // }
     }
 }
 
