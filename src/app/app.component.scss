@@ -25,9 +25,14 @@
     margin-top: -2rem;
     height: calc(100vh - 2.5rem);
     width: 85vw;
+    align-self: center;
     background-color: transparent;
     transition: all .5s ease-out;
     
+    @include respond(phone) {
+        width: 100vw;
+    }
+
     display: grid;
     grid-template-rows: min-content 1fr;
 

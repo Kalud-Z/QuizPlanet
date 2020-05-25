@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  pointsPerCorrectAnswer : 25
-
+  pointsPerCorrectAnswer : 25,
+  introAnimation : true
 };

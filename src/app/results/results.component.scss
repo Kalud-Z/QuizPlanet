@@ -2,7 +2,11 @@
 
 
 :host {
-    background-color: rgba(255, 0, 0, 0.452);
+    // background-color: rgba(255, 0, 0, 0.281);
+    display : block;
+    height: 100%;
+    width: 100%;
+    overflow : hidden;
 }
 
 .results-container {
@@ -61,17 +65,20 @@
     margin: 0 auto;
     background-color: rgba(0, 0, 255, 0.041); 
     width: 77%;   
-    max-height: 40rem;
-    overflow-y: auto;
+    height: 73vh;
+    overflow-y: scroll;
+
+    // border : 2px solid yellow;
 
     margin-top: 2rem;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
     box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
 
-    // @include respond(tab-land) { max-height: 34rem;}
+    & div {
+        font-size : 5rem;
+    }
 
-    // @include respond(tab-port) { max-height: 43rem;}
 
     @include respond(phone) { 
         height: 100%;
@@ -111,8 +118,6 @@
 
 
 //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-
-
 
 
 .table {

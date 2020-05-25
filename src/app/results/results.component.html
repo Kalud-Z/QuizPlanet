@@ -1,5 +1,5 @@
 
-<div class="results-container" *ngIf='!showAnswers'> 
+<div class="results-container" *ngIf='showAnswers'> 
 
     <h1 class="results-container__title" > You Final Score is : </h1>
     <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  [overallScore]='overallScore' >  {{ finalScoreInPercentage }} % </p>
@@ -15,8 +15,7 @@
 
 
 
-
-<div class="answers-container" *ngIf='showAnswers' >
+<div class="answers-container" *ngIf='!showAnswers' >
 
     <button class="buttonMain go-back-button" (click)='goBackToScore()'>
         <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>
@@ -38,16 +37,16 @@
 
         <tbody class="table__body">
 
-               <tr *ngFor='let questionObj of questionsObjArray; let i = index'>
+             <tr *ngFor='let questionObj of questionsObjArray; let i = index'>
                 <td> {{ i + 1 }} </td>
                 <td> {{ questionObj.question }} </td>
                 <td> {{ questionObj.correctAnswer }} </td>
                 <td> {{ questionObj.chosenAnswer }} </td>
                 <td *ngIf='questionObj.correctAnswer !== questionObj.chosenAnswer' > <svg class="x-logo">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>  
                 <td *ngIf='questionObj.correctAnswer === questionObj.chosenAnswer'> <svg class="checkmark-logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>  
-            </tr> 
+            </tr>  
             
-            <tr>
+            <!-- <tr>
                 <td> %number% </td>
                 <td> %questioon% </td>
                 <td> %correct-answer% </td>
@@ -206,11 +205,12 @@
                 <td> %chosen-answer% </td>
                 <td> %status% </td>
             </tr>   
-
+  -->
         </tbody>
 
     </table>
 
 
+      
 </div>
 
