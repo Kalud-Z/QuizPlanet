@@ -1,14 +1,10 @@
 @import 'src/buttons.scss';
 
 
-// * { border : 1px solid yellow }
-
 :host {
-    // background-color: red;
     display : block;
     height: 100%;
 }
-
 
 
 .question-container {
@@ -17,28 +13,12 @@
     background-color: #d9d9d9;
     max-width: 80%;
     height: auto;
-    // margin: 5% auto;
     margin: 5vh auto;
-    padding-bottom: 0.009rem;   // u have to give it a lil bit of paddin , otherwise the bottom-margin of next button woulndt take place !
+    padding-bottom: 0.009rem;   
     font-size: 1.6rem;
     border-radius: 0.3rem;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
     box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
     
-    // it start hidden
-    // display:none;
-    // opacity: 0;
-    // visibility: hidden;
-
-    // @include respond(phone) {
-    //     max-width: 83%;
-    //     margin: 10% auto;
-    // }
-
-    // @include respond(phone-small) { max-width: calc( 100% - #{$body-padding-top}); }
-
-
     &__title {
         padding: 1.5rem 0;
         padding-top: 2.5rem;
@@ -65,9 +45,7 @@
     align-self: center;
     margin-bottom: 2rem;
 
-    & button {
-        position : relative;
-    }
+    & button { position : relative }
 }
 
 .questionAndOptionsContainer {
@@ -78,16 +56,13 @@
     justify-content: space-evenly;
     padding-bottom: 2.5rem;
     
-    & >:not(:last-child) {
-        margin-bottom: 1rem;
-    } 
+    & >:not(:last-child) { margin-bottom: 1rem } 
 }
 
 
 .question {
     margin-left: 2rem;
     margin-right: 2rem;
-    // transform: translateX(92rem);
     transition: all 0.5s;
     transition-timing-function: cubic-bezier(.7,.09,.83,1.13);
 }
@@ -97,22 +72,15 @@
 
 // #########################################################   form ###############################################################################
 
-
-
 .form {
     padding-left: 4rem !important;
     margin-bottom: 3rem;
 
-    &__radio-input {
-        display: none;
-    }
+    &__radio-input { display: none }
 
-    &__radio-input:checked ~ &__radio-label &__radio-button::after { opacity: 1; }
+    &__radio-input:checked ~ &__radio-label &__radio-button::after { opacity: 1 }
     
-    &__label {
-        transition: all .3s;
-    }
-
+    &__label { transition: all .3s }
 
     &__radio-group {
         display: inline-block;
@@ -155,11 +123,7 @@
     }
 }
 
-
-
 // ##########################################################    TRACK BAR  ###################################################################
-
-
 
 .questions-track-bar {
     width : 100%;
@@ -182,11 +146,7 @@
 }
 
 
-
-.fill-bar {
-    background-position: left bottom !important;
-}
-
+.fill-bar { background-position: left bottom !important }
 
 
 .buttonBlockerDiv {

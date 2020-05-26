@@ -4,11 +4,9 @@
     position : fixed;
     top: 0;
     right:0;
-
     background-color: rgba(255, 0, 0, 0.137);
-
-    filter:blur(2px);
-
+    -webkit-filter:blur(2px);
+            filter:blur(2px);
     cursor: wait;
 }
 

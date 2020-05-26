@@ -32,13 +32,9 @@ export class ResultsComponent implements OnInit {  //###########################
     this.router.navigate(['/intro']);
   }
 
-  onShowAnswers() {
-    this.showAnswers = true;
-  }
+  onShowAnswers() { this.showAnswers = true }
 
-  goBackToScore() {
-    this.showAnswers = false
-  }
+  goBackToScore() { this.showAnswers = false }
 
 
 // ##########################################################################################################################################################

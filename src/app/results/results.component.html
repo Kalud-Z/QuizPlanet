@@ -2,20 +2,20 @@
 <div class="results-container" *ngIf='!showAnswers'> 
 
     <h1 class="results-container__title" > You Final Score is : </h1>
-    <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  [overallScore]='overallScore' >  {{ finalScoreInPercentage }} % </p>
+    <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  
+        [overallScore]='overallScore' >  {{ finalScoreInPercentage }} %
+    </p>
 
     <div class="results-container__buttons-container">
-        <button type="button"  class="buttonMain answers-button" (click)='onShowAnswers()'>  Check out Answers </button>
+        <button type="button"  class="buttonMain answers-button"    (click)='onShowAnswers()'>  Check out Answers </button>
         <button type="button"  class="buttonMain play-again-button" (click)='onPlayAgain()'>  play again </button>
     </div>
    
-
 </div>
 
 
 
-
-<div class="answers-container" *ngIf='showAnswers' >
+<div class="answers-container" *ngIf='showAnswers'>
 
     <button class="buttonMain go-back-button" (click)='goBackToScore()'>
         <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>
@@ -31,7 +31,6 @@
                 <th> Correct Answer </th>
                 <th> Your Answer </th>
                 <th> &nbsp; </th>
-
             </tr>
         </thead>
 

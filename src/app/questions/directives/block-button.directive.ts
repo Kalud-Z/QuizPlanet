@@ -22,28 +22,17 @@ export class BlockButtonDirective implements OnInit , OnChanges { //############
   }
 
   
-
-
   ngOnInit() {
-    // this.buttonsContainer = this.el.nativeElement;
-    // this.buttonsContainerChildren = this.buttonsContainer.childNodes;
-
-    // this.prevButton = this.buttonsContainerChildren[0];
-    // this.nextButton = this.buttonsContainerChildren[1];
-// 
-    // console.log('ngonint called')
   } //ngoninit
   
 
   ngOnChanges(changes: SimpleChanges){
     this.buttonsContainer = this.el.nativeElement;
-    // this.buttonsContainerChildren = this.buttonsContainer.childNodes;
     this.buttonsContainerChildren = this.buttonsContainer.children;
 
     console.log(' buttonsContainer : ' , this.buttonsContainer)
     console.log('buttonsContainerChildren : ' , this.buttonsContainerChildren)
 
-    // const array = Array.from(this.buttonsContainerChildren);
     const array = Array.prototype.slice.call(this.buttonsContainerChildren);
 
     console.log('el 0 :  ####  , ' , array)
@@ -52,20 +41,10 @@ export class BlockButtonDirective implements OnInit , OnChanges { //############
 
     this.prevButton = this.buttonsContainerChildren[0];
     this.nextButton = this.buttonsContainerChildren[1];
-    console.log('prev button : ' , this.prevButton)
-    console.log('cons iscalled')
-
-
-    console.log('ngonchange called')
-
-    // console.log('onhange iscalled and these are thecahnges ; ');
-    // console.log(changes);
-
+    
       if(this.blockNextButton) {
-        // console.log('we are blockin the next button now')
         this.addBlocker(this.nextButton);
       } else {
-        // this.buttonsContainer.removeChild(this.nextButton);
       }
 
       if(this.blockPrevButton) {
@@ -73,23 +52,17 @@ export class BlockButtonDirective implements OnInit , OnChanges { //############
 
         this.addBlocker(this.prevButton);
       } else {
-        // console.log('we are about to remove the block button')
         this.renderer.removeChild(this.prevButton, this.buttonBlocker);
       }
   }
 
 
   addBlocker(target : any) {
-    // console.log('called add blocker')
-    // console.log('target ' , target)
-    // console.log('target kids ' , target.childNodes)
     if(target.childNodes.length <= 1) {
-    // console.log('we are about to add the add blocker')
       this.buttonBlocker  = this.renderer.createElement('div');
       this.renderer.addClass(this.buttonBlocker, 'buttonBlockerDiv');
       this.renderer.appendChild(target, this.buttonBlocker);
     }
-    // console.log(target.childNodes.length)
   }
 
 

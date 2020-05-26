@@ -18,18 +18,14 @@ import { environment } from 'src/environments/environment';
 // ###########################################################################################################################################################
 export class AppComponent implements OnInit { //##############################################################################################################################
   @HostBinding('@titleState') routeAnimationn = true;
-  isLoading = false;
   introLoading = true;
-
+  isLoading = false;
   openDoorNow = false;
-
+  animateZipperNow = false;
   introAnimationDone = false;
   adjustMainWrapper = false;
 
   introAnimationOn = environment.introAnimation;
-
-  animateZipperNow = false;
-
   
 
   constructor(private dataStorage : DataService) {}
@@ -40,13 +36,9 @@ export class AppComponent implements OnInit { //################################
     })
 
   
-    setTimeout(() => {
-      this.openDoorNow = true;
-    }, 4500);
+    setTimeout(() => { this.openDoorNow = true }, 4500);
 
-    setTimeout(() => {
-      this.animateZipperNow = true;
-    }, 1500);
+    setTimeout(() => { this.animateZipperNow = true }, 1500);
 
     setTimeout(() => {
       this.introAnimationDone = true;
@@ -54,22 +46,17 @@ export class AppComponent implements OnInit { //################################
     }, 6500);
 
 
-    if(!this.introAnimationOn) {
-      this.animateTitle();
-    }
+    if(!this.introAnimationOn) { this.animateTitle() }
 
 
   } //ngonint()
 
 
+  // TODO : write this as an animation
   animateTitle() {
     const allLetters = document.querySelectorAll('.AppTitle__letter');
-    setTimeout(() => {
-      allLetters.forEach(el => el.classList.add('display-Letter'))   
-    }, 2000);
+    setTimeout(() => { allLetters.forEach(el => el.classList.add('display-Letter')) }, 2000);
   }
-
-    
 
 
   // /####################################################################################################################################################

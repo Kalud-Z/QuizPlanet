@@ -1,6 +1,4 @@
 
-
-
 <div class='container' [ngClass]="{ loading : isLoading } ">
 
   <div class="mainWrapper" [ngClass]="{ mainWrapperFinalPosition : adjustMainWrapper}">
@@ -35,16 +33,13 @@
 
 
 
+  <div class="introDoor" [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
 
-  
+    <div class="introDoor__left"  [ngClass]="{ 'pull-left-side' : openDoorNow}" ></div>
+    <div class="introDoor__right" [ngClass]="{ 'pull-right-side' : openDoorNow}" ></div>
+    <div class="introDoor__line"  [ngClass]="{ 'introDoor__line-goDown' : animateZipperNow }" ></div>
 
-<div class="introDoor" [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
-
-  <div class="introDoor__left"  [ngClass]="{ 'pull-left-side' : openDoorNow}" ></div>
-  <div class="introDoor__right" [ngClass]="{ 'pull-right-side' : openDoorNow}" ></div>
-  <div class="introDoor__line" [ngClass]="{ 'introDoor__line-goDown' : animateZipperNow }" ></div>
-
-</div>
+  </div>
 
 
   <div class="zipper-container"  [@zipperState]="animateZipperNow"  [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
@@ -156,7 +151,7 @@
 
     <!-- all 63 pieces -->
 
-</div>
+  </div>
 
 
 

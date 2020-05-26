@@ -23,22 +23,16 @@ export class QuestionsComponent implements OnInit {  //#########################
 
   isLoading = false;
 
-
   constructor(private dataService : DataService, private router : Router) { }
 
   ngOnInit(): void {
-    // this.questionsAndOptions = this.dataService.fetchQuestions();
     this.numberOfQuestions = this.dataService.numOfQuestions;
     this.questionsAndOptions = this.dataService.getQuestionsAndOptions();
   }
 
-
-  answerChosen(answer : string) {
-    this.chosenAnswer = answer;
-  }
+  answerChosen(answer : string) { this.chosenAnswer = answer }
 
   goToNextQuestion() {
-    // we save the answer
     if(this.questionsCounter < this.numberOfQuestions - 1) {
       this.dataService.saveAnswer(this.questionsCounter, this.chosenAnswer);
       this.questionsCounter++;
@@ -47,21 +41,16 @@ export class QuestionsComponent implements OnInit {  //#########################
   }
 
   goToPrevQuestion() {
-    if(this.questionsCounter >= 1) {
-      this.questionsCounter--;
-    }
+    if(this.questionsCounter >= 1) { this.questionsCounter-- }
     setTimeout(() => { this.tickOption() }, 20);
   }
 
-
-  
 
   tickOption() {
     const currentQuestionObj = this.questionsAndOptions[this.questionsCounter];
     const chosenAnswer = currentQuestionObj.chosenAnswer;
     if(chosenAnswer && chosenAnswer.length > 0) {
       let chosenAnswerIndex = currentQuestionObj.options.indexOf(chosenAnswer);
-    
       let element: HTMLElement = document.querySelector('#option'+ chosenAnswerIndex);  
       element.click();
     }
@@ -87,3 +76,4 @@ export class QuestionsComponent implements OnInit {  //#########################
 
 }  //#######################################################################################################################################################
 // #########################################################################################################################################################
+

@@ -1,6 +1,5 @@
 
 export class questionObj {
-
     constructor(
        public question : string,
        public options : string[],
