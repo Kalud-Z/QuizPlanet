@@ -2,7 +2,7 @@
 # QuizPlanet
 
 is a Web-based trivia Game built with Angular 9.
-It's fun to play and it helps you learn ton of facts about all kind of fields.
+It's fun to play and helps you learn ton of facts in all kinds of topics.
 
 ### Implemented Features & Techniques :
 
