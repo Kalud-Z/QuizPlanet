@@ -11,6 +11,7 @@ const AppRoutes: Routes = [
   { path: 'intro' , component : IntroComponent },
   { path: 'questions' , component : QuestionsComponent },
   { path: 'results' , component : ResultsComponent },
+  // { path: 'new-task' , component : NewTaskComponent , canActivate : [NewTaskGuard] },
   { path: '**' , redirectTo : 'intro' , pathMatch : 'full'}
 ]
 

@@ -1,11 +1,3 @@
-cross-browsers
 
 
-
-
-Mobile :
-
-
-
-intro animation : 
-make it all one element that will be translated down so it's one single animation of one single adult element.
+clean-up and add to portfolio

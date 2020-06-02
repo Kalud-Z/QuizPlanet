@@ -266,6 +266,9 @@
 
 // #####################################################    UTILITY CLASSES    ############################################################################
 
+.blocked {
+    pointer-events: none !important;
+}
 
 .selected   {
     & .catWrapper__name { opacity : 1 }
