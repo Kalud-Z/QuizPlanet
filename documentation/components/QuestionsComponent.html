@@ -1,0 +1,1174 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>quiz-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">quiz-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>QuestionsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/questions/questions.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-questions</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./questions.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./questions.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#chosenAnswer">chosenAnswer</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#numberOfQuestions">numberOfQuestions</a>
+                            </li>
+                            <li>
+                                <a href="#questionsAndOptions">questionsAndOptions</a>
+                            </li>
+                            <li>
+                                <a href="#questionsCounter">questionsCounter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#answerChosen">answerChosen</a>
+                            </li>
+                            <li>
+                                <a href="#goToNextQuestion">goToNextQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#goToPrevQuestion">goToPrevQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#goToScorePage">goToScorePage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#tickOption">tickOption</a>
+                            </li>
+                            <li>
+                                <a href="#toggleIsLoading">toggleIsLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/questions/questions.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="answerChosen"></a>
+                    <span class="name">
+                        <b>
+                            answerChosen
+                        </b>
+                        <a href="#answerChosen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>answerChosen(answer: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/questions/questions.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>answer</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToNextQuestion"></a>
+                    <span class="name">
+                        <b>
+                            goToNextQuestion
+                        </b>
+                        <a href="#goToNextQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToNextQuestion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/questions/questions.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToPrevQuestion"></a>
+                    <span class="name">
+                        <b>
+                            goToPrevQuestion
+                        </b>
+                        <a href="#goToPrevQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToPrevQuestion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/questions/questions.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToScorePage"></a>
+                    <span class="name">
+                        <b>
+                            goToScorePage
+                        </b>
+                        <a href="#goToScorePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToScorePage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/questions/questions.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/questions/questions.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tickOption"></a>
+                    <span class="name">
+                        <b>
+                            tickOption
+                        </b>
+                        <a href="#tickOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>tickOption()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/questions/questions.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleIsLoading"></a>
+                    <span class="name">
+                        <b>
+                            toggleIsLoading
+                        </b>
+                        <a href="#toggleIsLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleIsLoading(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/questions/questions.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chosenAnswer"></a>
+                        <span class="name">
+                            <b>
+                            chosenAnswer</b>
+                            <a href="#chosenAnswer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/questions/questions.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/questions/questions.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numberOfQuestions"></a>
+                        <span class="name">
+                            <b>
+                            numberOfQuestions</b>
+                            <a href="#numberOfQuestions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/questions/questions.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="questionsAndOptions"></a>
+                        <span class="name">
+                            <b>
+                            questionsAndOptions</b>
+                            <a href="#questionsAndOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/questionObj.html" target="_self" >questionObj[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/questions/questions.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="questionsCounter"></a>
+                        <span class="name">
+                            <b>
+                            questionsCounter</b>
+                            <a href="#questionsCounter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/questions/questions.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { questionObj } from &#x27;./questionObj.model&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { createNewTrigger, nextQuestionTrigger } from &#x27;../animations&#x27;;
+
+@Component({
+  selector: &#x27;app-questions&#x27;,
+  templateUrl: &#x27;./questions.component.html&#x27;,
+  styleUrls: [&#x27;./questions.component.scss&#x27;],
+  animations : [
+    nextQuestionTrigger
+  ]
+})
+
+// /#######################################################################################################################################################
+export class QuestionsComponent implements OnInit {  //####################################################################################################
+  questionsAndOptions : questionObj[] ;
+  chosenAnswer : string;
+  questionsCounter : number &#x3D; 0;
+  numberOfQuestions : number;
+
+  isLoading &#x3D; false;
+
+  constructor(private dataService : DataService, private router : Router) { }
+
+  ngOnInit(): void {
+    this.numberOfQuestions &#x3D; this.dataService.numOfQuestions;
+    this.questionsAndOptions &#x3D; this.dataService.getQuestionsAndOptions();
+  }
+
+  answerChosen(answer : string) { this.chosenAnswer &#x3D; answer }
+
+  goToNextQuestion() {
+    if(this.questionsCounter &lt; this.numberOfQuestions - 1) {
+      this.dataService.saveAnswer(this.questionsCounter, this.chosenAnswer);
+      this.questionsCounter++;
+    }
+    setTimeout(() &#x3D;&gt; { this.tickOption() }, 20);
+  }
+
+  goToPrevQuestion() {
+    if(this.questionsCounter &gt;&#x3D; 1) { this.questionsCounter-- }
+    setTimeout(() &#x3D;&gt; { this.tickOption() }, 20);
+  }
+
+
+  tickOption() {
+    const currentQuestionObj &#x3D; this.questionsAndOptions[this.questionsCounter];
+    const chosenAnswer &#x3D; currentQuestionObj.chosenAnswer;
+    if(chosenAnswer &amp;&amp; chosenAnswer.length &gt; 0) {
+      let chosenAnswerIndex &#x3D; currentQuestionObj.options.indexOf(chosenAnswer);
+      let element: HTMLElement &#x3D; document.querySelector(&#x27;#option&#x27;+ chosenAnswerIndex);  
+      element.click();
+    }
+  }
+
+  
+  goToScorePage() {
+    this.dataService.saveAnswer(this.questionsCounter, this.chosenAnswer);
+    this.toggleIsLoading(true)
+    this.dataService.calculateScore();
+    setTimeout(() &#x3D;&gt; {
+      this.router.navigate([&#x27;/results&#x27;]);
+      this.toggleIsLoading(false)
+    }, 2000);
+  }
+
+
+  toggleIsLoading(value : boolean) {
+    this.isLoading &#x3D; value;
+    this.dataService.isLoadingSubject.next(this.isLoading);
+  }
+
+
+}  //#######################################################################################################################################################
+// #########################################################################################################################################################
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;question-container &quot;&gt; &lt;!-- ##################################################################################### --&gt;
+    
+    &lt;div class&#x3D;&quot;questions-track-bar&quot; appTrackBar [currentQuestionIndex]&#x3D;&#x27;questionsCounter&#x27;&gt;
+            &lt;div class&#x3D;&quot;questions-track-bar__child&quot; id&#x3D;&quot;i&quot; *ngFor&#x3D;&#x27;let bar of questionsAndOptions; let i &#x3D; index&#x27;&gt; &amp;nbsp;&lt;/div&gt;
+    &lt;/div&gt; 
+
+    &lt;h1 class&#x3D;&quot;question-container__title&quot;&gt; Question Number {{ questionsCounter + 1 }} &lt;/h1&gt; 
+
+    &lt;form&gt;
+        &lt;div class&#x3D;&quot;form__buttons&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;buttonMain previous-question-button&quot;  (click)&#x3D;&#x27;goToPrevQuestion()&#x27; 
+                    [ngClass]&#x3D;&quot;{ &#x27;button-blocked&#x27; : questionsCounter &lt; 1 }&quot; &gt; Previous
+            &lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot; buttonMain next-question-button&quot;     (click)&#x3D;&#x27;goToNextQuestion()&#x27; 
+                    [ngClass]&#x3D;&quot;{ &#x27;button-blocked&#x27; : questionsCounter &#x3D;&#x3D;&#x3D; numberOfQuestions-1 }&quot; &gt;Next
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;questionAndOptionsContainer&quot; &gt;
+            &lt;p class&#x3D;&quot;question&quot; [@nextQuestionState]&#x3D;&quot;questionsCounter&quot;&gt; {{ questionsAndOptions[questionsCounter].question }} &lt;/p&gt;
+
+            &lt;div class&#x3D;&quot;form__radio-group&quot;   *ngFor&#x3D;&quot;let option of questionsAndOptions[questionsCounter].options; let i &#x3D; index&quot; (click)&#x3D;&quot;answerChosen(option)&quot;&gt;
+                &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;possible-answer&quot; [value]&#x3D;&quot;[&#x27;option&#x27;+i]&quot; class&#x3D;&quot;form__radio-input&quot; [id]&#x3D;&quot;[&#x27;option&#x27;+i]&quot;&gt;
+                &lt;label [for]&#x3D;&quot;[&#x27;option&#x27;+i]&quot; class&#x3D;&quot;form__radio-label&quot; [@nextQuestionState]&#x3D;&quot;questionsCounter&quot;&gt;
+                    &lt;span class&#x3D;&quot;form__radio-button&quot;&gt;&lt;/span&gt;
+                    &lt;span [class]&#x3D;&quot;[&#x27;option-&#x27;+i+&#x27;-text&#x27;]&quot; &gt; {{ option }}&lt;/span&gt;
+                &lt;/label&gt;
+            &lt;/div&gt; 
+
+        &lt;/div&gt;
+        
+    &lt;/form&gt;
+    
+    
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;buttonMain score-button&quot;  (click)&#x3D;&#x27;goToScorePage()&#x27; 
+            *ngIf&#x3D;&quot;questionsCounter &#x3D;&#x3D;&#x3D; numberOfQuestions-1&quot;   [ngClass]&#x3D;&quot;{ loading : isLoading }&quot;&gt; See results
+    &lt;/button&gt;
+
+&lt;/div&gt;  &lt;!-- container --&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./questions.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/buttons.scss&#x27;;
+
+
+:host {
+    display : block;
+    height: 100%;
+}
+
+
+.question-container {
+    position: relative;
+    text-align: center;
+    background-color: #d9d9d9;
+    max-width: 80%;
+    height: auto;
+    margin: 5vh auto;
+    padding-bottom: 0.009rem;   
+    font-size: 1.6rem;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
+    
+    &amp;__title {
+        padding: 1.5rem 0;
+        padding-top: 2.5rem;
+        border-bottom: 1.5px solid black;
+        font-size:2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    &amp; form {
+        flex : 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.form__buttons {
+    display : grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:6rem;
+
+    align-self: center;
+    margin-bottom: 2rem;
+
+    &amp; button { position : relative }
+}
+
+.questionAndOptionsContainer {
+    overflow:hidden;
+    display : flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-bottom: 2.5rem;
+    
+    &amp; &gt;:not(:last-child) { margin-bottom: 1rem } 
+}
+
+
+.question {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(.7,.09,.83,1.13);
+}
+
+
+
+
+// #########################################################   form ###############################################################################
+
+.form {
+    padding-left: 4rem !important;
+    margin-bottom: 3rem;
+
+    &amp;__radio-input { display: none }
+
+    &amp;__radio-input:checked ~ &amp;__radio-label &amp;__radio-button::after { opacity: 1 }
+    
+    &amp;__label { transition: all .3s }
+
+    &amp;__radio-group {
+        display: inline-block;
+        margin-left: 2rem;
+        transition: all 0.5s;
+        transition-timing-function: cubic-bezier(.7,.09,.83,1.13);
+    }
+
+    &amp;__radio-label {
+        font-size: 1.55rem;
+        cursor: pointer;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &amp;__radio-button {
+        height: 2rem;
+        width: 2rem;
+        border : 2px solid rgb(211, 92, 92);
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        margin-right: 2rem;
+
+        &amp;::after {
+            content: &quot;&quot;;
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            background-color: red;
+            border-radius: inherit;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50% , -50%);
+            opacity: 0;
+            transition: all .4s;
+        }
+    }
+}
+
+// ##########################################################    TRACK BAR  ###################################################################
+
+.questions-track-bar {
+    width : 100%;
+    height: 1rem;
+    border-radius: 5px;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: stretch;
+
+    &amp;__child { 
+        background: linear-gradient(to right, rgba(245, 16, 176, 0.5) 50%, rgba(245, 16, 176, 0.089) 50%);  // blue is the starting color of the div. then it transition into red upon hover.
+        background-size: 200% 100%;
+        background-position:right bottom;
+        transition:all 1s ease;
+        flex : 1;
+        border-right: 5px solid white;
+        &amp;:last-child { border: none; }
+    }
+}
+
+
+.fill-bar { background-position: left bottom !important }
+
+
+.buttonBlockerDiv {
+    position : absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.486);
+    cursor : not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="question-container "> <!-- ##################################################################################### -->        <div class="questions-track-bar" appTrackBar [currentQuestionIndex]=\'questionsCounter\'>            <div class="questions-track-bar__child" id="i" *ngFor=\'let bar of questionsAndOptions; let i = index\'> &nbsp;</div>    </div>     <h1 class="question-container__title"> Question Number {{ questionsCounter + 1 }} </h1>     <form>        <div class="form__buttons">            <button type="button" class="buttonMain previous-question-button"  (click)=\'goToPrevQuestion()\'                     [ngClass]="{ \'button-blocked\' : questionsCounter < 1 }" > Previous            </button>            <button type="button" class=" buttonMain next-question-button"     (click)=\'goToNextQuestion()\'                     [ngClass]="{ \'button-blocked\' : questionsCounter === numberOfQuestions-1 }" >Next            </button>        </div>        <div class="questionAndOptionsContainer" >            <p class="question" [@nextQuestionState]="questionsCounter"> {{ questionsAndOptions[questionsCounter].question }} </p>            <div class="form__radio-group"   *ngFor="let option of questionsAndOptions[questionsCounter].options; let i = index" (click)="answerChosen(option)">                <input type="radio" name="possible-answer" [value]="[\'option\'+i]" class="form__radio-input" [id]="[\'option\'+i]">                <label [for]="[\'option\'+i]" class="form__radio-label" [@nextQuestionState]="questionsCounter">                    <span class="form__radio-button"></span>                    <span [class]="[\'option-\'+i+\'-text\']" > {{ option }}</span>                </label>            </div>         </div>            </form>            <button type="button" class="buttonMain score-button"  (click)=\'goToScorePage()\'             *ngIf="questionsCounter === numberOfQuestions-1"   [ngClass]="{ loading : isLoading }"> See results    </button></div>  <!-- container --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlurredSurfaceComponent', 'selector': 'app-blurred-surface'},{'name': 'IntroComponent', 'selector': 'app-intro'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'ResultsComponent', 'selector': 'app-results'}];
+    var DIRECTIVES = [{'name': 'BlockButtonDirective', 'selector': '[appBlockButton]'},{'name': 'DisplayScoreDirective', 'selector': '[appDisplayScore]'},{'name': 'IntroAnimationDirective', 'selector': '[appIntroAnimation]'},{'name': 'TrackBarDirective', 'selector': '[appTrackBar]'}];
+    var ACTUAL_COMPONENT = {'name': 'QuestionsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'QuestionsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
