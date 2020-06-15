@@ -1,7 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, HostBinding } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { introPageTrigger, introImagesTrigger } from '../animations';
+
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-intro',
@@ -12,11 +15,13 @@ import { introPageTrigger, introImagesTrigger } from '../animations';
     introImagesTrigger
   ]
 })
+//#########################################################################################################################################################
 export class IntroComponent implements OnInit { //#############################################################################################################
   chosenCatName : string;
   chosenCatId : number;
   numberOfQuestions = 4 ;
   difficulty = 'medium';
+
   timerOn : boolean = false;
   isLoading = false;
 
@@ -41,9 +46,7 @@ export class IntroComponent implements OnInit { //##############################
     this.dataService.isLoadingSubject.next(this.isLoading);
   }
 
-  toggleTimer() {
-    this.timerOn = !this.timerOn;
-  }
+  toggleTimer() { this.timerOn = !this.timerOn }
 
   catChosen(type : string) {
     this.chosenCatName = type;
@@ -59,7 +62,6 @@ export class IntroComponent implements OnInit { //##############################
       }, 2000);
     }
   }
-
 
 
 

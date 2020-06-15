@@ -1,31 +1,32 @@
 
-<div class='container' [ngClass]="{ loading : isLoading } ">
 
-  <div class="mainWrapper" [ngClass]="{ mainWrapperFinalPosition : adjustMainWrapper}">
-    <div class="mainWrapper__head"  [ngClass]="{ 'head-padding' : !introAnimationOn }" >
+<div class='componentContainer' [ngClass]="{ loading : isLoading } ">
+
+  <div class="mainContainer" [ngClass]="{ 'mainContainer-finalPosition' : adjustMainContainer}">
+    <div class="mainContainer__head"  [ngClass]="{ 'mainContainer__head-extraPadding' : !introAnimationOn }" >
       
-      <div class="AppTitle" [ngClass]="{ 'remove-element' : introAnimationOn }"> 
-        <span class="AppTitle__letter"> &nbsp;</span>
-        <span class="AppTitle__letter">Q</span>
-        <span class="AppTitle__letter">u</span>
-        <span class="AppTitle__letter">i</span>
-        <span class="AppTitle__letter">z</span>
-        <span class="AppTitle__letter">&nbsp;</span>
-        <span class="AppTitle__letter">P</span>
-        <span class="AppTitle__letter">l</span>
-        <span class="AppTitle__letter">a</span>
-        <span class="AppTitle__letter">n</span>
-        <span class="AppTitle__letter">e</span>
-        <span class="AppTitle__letter">t</span>
-        <span class="AppTitle__letter"> &nbsp;</span>
+      <div class="appTitle" [ngClass]="{ removeElement : introAnimationOn }"> 
+        <span class="appTitle__letter"> &nbsp;</span>
+        <span class="appTitle__letter">Q</span>
+        <span class="appTitle__letter">u</span>
+        <span class="appTitle__letter">i</span>
+        <span class="appTitle__letter">z</span>
+        <span class="appTitle__letter">&nbsp;</span>
+        <span class="appTitle__letter">P</span>
+        <span class="appTitle__letter">l</span>
+        <span class="appTitle__letter">a</span>
+        <span class="appTitle__letter">n</span>
+        <span class="appTitle__letter">e</span>
+        <span class="appTitle__letter">t</span>
+        <span class="appTitle__letter"> &nbsp;</span>
       </div> 
       
-      <h1 class="mainWrapper__head__title"  [ngClass]="{ 'remove-element' : !introAnimationOn }" > Quiz Planet </h1>
+      <h1 class="mainContainer__head__title"  [ngClass]="{ removeElement : !introAnimationOn }" > Quiz Planet </h1>
 
-    </div> <!-- mainWrapper__head -->
+    </div> <!-- mainContainer__head -->
 
 
-    <div class="mainWrapper__body">
+    <div class="mainContainer__body">
       <router-outlet></router-outlet>
     </div>
 
@@ -33,17 +34,22 @@
 
 
 
-  <div class="introDoor" [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
 
-    <div class="introDoor__left"  [ngClass]="{ 'pull-left-side' : openDoorNow}" ></div>
-    <div class="introDoor__right" [ngClass]="{ 'pull-right-side' : openDoorNow}" ></div>
-    <div class="introDoor__line"  [ngClass]="{ 'introDoor__line-goDown' : animateZipperNow }" ></div>
 
+
+
+
+  <!-- Intro Animation stuff ################################################################################### -->
+
+  <div class="introDoor" [ngClass]="{ removeElement : introAnimationDone || !introAnimationOn}">
+    <div class="introDoor__left"        [ngClass]="{ 'introDoor__left-pull'  : openDoorNow}" ></div>
+    <div class="introDoor__right"       [ngClass]="{ 'introDoor__right-pull' : openDoorNow}" ></div>
+    <div class="introDoor__middleLine"  [ngClass]="{ 'introDoor__middleLine-goDown' : animateZipperNow }" ></div>
   </div>
 
 
-  <div class="zipper-container"  [@zipperState]="animateZipperNow"  [ngClass]="{'remove-element' : introAnimationDone || !introAnimationOn}">
-    <img class="zipper" src="../assets/zipper.svg" alt="" >
+  <div class="zipperWrapper"  [@zipperState]="animateZipperNow"  [ngClass]="{ removeElement : introAnimationDone || !introAnimationOn}">
+    <img class="zipper" src="../assets/zipper.svg" >
 
     <div class="right"></div>
     <div class="left"></div>
@@ -146,26 +152,13 @@
     <div class="left"></div>
 
     <div class="right"></div>
-
-
 
     <!-- all 63 pieces -->
 
   </div>
 
 
-
-
-
 </div>
-
-
-
-
-
-
-
-
 
 
 

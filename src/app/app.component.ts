@@ -1,8 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { DataService } from './data.service';
+
 import { titleTrigger, zipperTrigger } from './animations';
 import { environment } from 'src/environments/environment';
 
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -23,78 +24,35 @@ export class AppComponent implements OnInit { //################################
   openDoorNow = false;
   animateZipperNow = false;
   introAnimationDone = false;
-  adjustMainWrapper = false;
+  adjustMainContainer = false;
 
   introAnimationOn = environment.introAnimation;
   
-
   constructor(private dataStorage : DataService) {}
 
   ngOnInit() {
     this.dataStorage.isLoadingSubject.subscribe(data => {
       this.isLoading = data;
     })
-
   
     setTimeout(() => { this.openDoorNow = true }, 4500);
-
     setTimeout(() => { this.animateZipperNow = true }, 1500);
-
     setTimeout(() => {
       this.introAnimationDone = true;
-      this.adjustMainWrapper = true;
+      this.adjustMainContainer = true;
     }, 6500);
 
-
     if(!this.introAnimationOn) { this.animateTitle() }
-
-
   } //ngonint()
-
 
   // TODO : write this as an animation
   animateTitle() {
-    const allLetters = document.querySelectorAll('.AppTitle__letter');
-    setTimeout(() => { allLetters.forEach(el => el.classList.add('display-Letter')) }, 2000);
+    const allLetters = document.querySelectorAll('.appTitle__letter');
+    setTimeout(() => { allLetters.forEach(el => el.classList.add('appTitle__letter-display')) }, 2000);
   }
 
-
-  // /####################################################################################################################################################
 } //########################################################################################################################################################
+// #########################################################################################################################################################
 
 
 
-
-/* 
-animateZipper() {
-  const button = document.querySelector('.start')
-
-  const zipperRightAll  = document.querySelectorAll('.right');
-  const zipperLeftAll   = document.querySelectorAll('.left');
-  const zipper          = document.querySelector('.zipper')
-
-  const speed = 90;
-
-  
-  setTimeout(() => {
-    zipper.classList.add('zipper-goDown');
-  }, 80);
-
-  for(let i = 0 ; i < zipperRightAll.length ; i++) {
-      (function() {
-              setTimeout(function(){ 
-              zipperRightAll[i].classList.add('hide');
-          } , speed * i); 
-      })();
-    }
-
-    for(let i = 0 ; i < zipperLeftAll.length ; i++) {
-    (function() {
-            setTimeout(function(){ 
-            zipperLeftAll[i].classList.add('hide');
-        } ,speed * i); 
-    })();
-  }
-
-} //animateZipper
- */

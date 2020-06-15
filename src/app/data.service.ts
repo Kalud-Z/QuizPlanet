@@ -52,6 +52,11 @@ export class DataService { //###################################################
     return this.questionsAndOptions.slice();
   }
 
+  /**
+   * It saves the chosen answer from the user in the correct object.
+   * @param id  id of the object we are about to alter.
+   * @param answer the chosen answer itself
+   */
   saveAnswer(id : number , answer : string) {
     this.questionsAndOptions[id].chosenAnswer = answer;
   }
