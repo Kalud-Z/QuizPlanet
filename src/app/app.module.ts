@@ -4,19 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
 import { QuestionsComponent } from './questions/questions.component';
-
-import { AppRoutingModule } from './app-routing.module';
 import { ResultsComponent } from './results/results.component';
 import { BlurredSurfaceComponent } from './shared/blurred-surface/blurred-surface.component';
 import { DisplayScoreDirective } from './results/directives/display-score.directive';
 import { TrackBarDirective } from './questions/directives/track-bar.directive';
-import { BlockButtonDirective } from './questions/directives/block-button.directive';
 import { IntroAnimationDirective } from './intro-animation.directive'; // CLI imports AppRoutingModule
 
 
@@ -29,8 +26,7 @@ import { IntroAnimationDirective } from './intro-animation.directive'; // CLI im
     BlurredSurfaceComponent,
     DisplayScoreDirective,
     TrackBarDirective,
-    BlockButtonDirective,
-    IntroAnimationDirective
+    IntroAnimationDirective  //TODO : fix this one.
   ],
   imports: [
     BrowserModule,

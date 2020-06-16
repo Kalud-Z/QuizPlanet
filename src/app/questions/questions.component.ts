@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { DataService } from '../data.service';
 import { questionObj } from './questionObj.model';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-import { createNewTrigger, nextQuestionTrigger } from '../animations';
+import { nextQuestionTrigger } from '../animations';
 
 @Component({
   selector: 'app-questions',

@@ -1,46 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { questionObj } from './questions/questionObj.model';
+
 import { Subject, BehaviorSubject } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+
+import { questionObj } from './questions/questionObj.model';
+
+
 
 @Injectable({ providedIn: 'root' })
 
 // ######################################################################################################################################################
 export class DataService { //############################################################################################################################
-  readyToDisplayQuestions = new Subject<boolean>();
-  isLoadingSubject        = new BehaviorSubject<boolean>(false);
-
-  chosenCat       : number
-  numOfQuestions  : number
-  difficulty      : string
+  questionsAndOptions : questionObj[] = [];
+  chosenCat       : number;
+  numOfQuestions  : number;
+  difficulty      : string;
 
   finalScore : number;
   overallScore : number;
 
-  //  questionsAndOptions : questionObj[] = [
-  //   {
-  //     question : 'Former United States President Bill Clinton famously played which instrument?',
-  //     options : ['Piano' , 'Baritone horn' , 'saxophone' , 'violin'],
-  //     correctAnswer : 'Piano'
-  //   },
-  //   {
-  //     question : 'Former Unitedsfsdfsgsgsinton famously played which insgdsgstrument?',
-  //     options : [ 'Piano'  , 'Baritone'  , 'saxsdfsophone'  , 'visdfsdgolin'],
-  //     correctAnswer : 'Baritone'
-  //   }
-  // ]; 
+  readyToDisplayQuestions = new Subject<boolean>();
+  isLoadingSubject        = new BehaviorSubject<boolean>(false);
 
-  questionsAndOptions : questionObj[] = [];
   
-
   constructor(private http: HttpClient)  {}
 
-
-  resetData() {
-    this.questionsAndOptions = []
-  }
+  resetData() { this.questionsAndOptions = [] }
 
   initData(cat : number , numOfQuestions : number , diff : string) {
     this.chosenCat = cat;
@@ -48,9 +34,7 @@ export class DataService { //###################################################
     this.difficulty = diff;
   }
 
-  getQuestionsAndOptions(): questionObj[] {
-    return this.questionsAndOptions.slice();
-  }
+  getQuestionsAndOptions(): questionObj[] { return this.questionsAndOptions.slice() }
 
   /**
    * It saves the chosen answer from the user in the correct object.
@@ -69,7 +53,18 @@ export class DataService { //###################################################
       })
   }
 
-  buildQuestionsArray(data : any) {
+  calculateScore() {
+    let tempFinalScore = 0;
+    this.questionsAndOptions.forEach(el => {
+      if(el.chosenAnswer == el.correctAnswer) { tempFinalScore += environment.pointsPerCorrectAnswer }
+    })
+    this.finalScore = tempFinalScore;
+  }
+  
+
+  // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   PRIVATE METHODS  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+  private buildQuestionsArray(data : any) {
     data.results.forEach(el => {
       let question : string;
       let options: string[];
@@ -86,19 +81,8 @@ export class DataService { //###################################################
     this.readyToDisplayQuestions.next(true);
     this.overallScore = this.questionsAndOptions.length * environment.pointsPerCorrectAnswer;
   }
-
-  calculateScore() {
-    let tempFinalScore = 0;
-    this.questionsAndOptions.forEach(el => {
-      if(el.chosenAnswer == el.correctAnswer) { tempFinalScore += environment.pointsPerCorrectAnswer }
-    })
-    this.finalScore = tempFinalScore;
-  }
-
-  // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   EXTERNAL METHODS  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-
     
-  transformHTMLChars(str:string): string {
+  private transformHTMLChars(str:string): string {
     str = str.replace(/&#039;/gi , "'");
     str = str.replace(/&amp;/gi , "&");
     str = str.replace(/&lt;/gi , "<");
@@ -111,4 +95,27 @@ export class DataService { //###################################################
 
 }   //#####################################################################################################################################################
 // ###########################################################################################################################################################
+  
 
+
+
+
+
+
+
+/* 
+
+
+  //  questionsAndOptions : questionObj[] = [
+  //   {
+  //     question : 'Former United States President Bill Clinton famously played which instrument?',
+  //     options : ['Piano' , 'Baritone horn' , 'saxophone' , 'violin'],
+  //     correctAnswer : 'Piano'
+  //   },
+  //   {
+  //     question : 'Former Unitedsfsdfsgsgsinton famously played which insgdsgstrument?',
+  //     options : [ 'Piano'  , 'Baritone'  , 'saxsdfsophone'  , 'visdfsdgolin'],
+  //     correctAnswer : 'Baritone'
+  //   }
+  // ]; 
+  */

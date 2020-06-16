@@ -42,23 +42,32 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
 
 
 
-// ########################################################         OTHER         ####################################################
+// ########################################################         UTILITY CLASSES         ####################################################
 
 
 
 .loading {
     cursor : wait !important;
     filter:blur(2px);
-    // background-color: red !important;
 }
 
 
+.fillBar { background-position: left bottom !important }
 
 
 
-.removeElement {
-    display : none !important;
+.buttonBlockerDiv {
+    position : absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.486);
+    cursor : not-allowed;
 }
+
+
+.removeElement { display : none !important }
 
 
 

@@ -1,29 +1,27 @@
 
-<div class="results-container" *ngIf='!showAnswers'> 
+<div class="resultsContainer" *ngIf='!showAnswers'> 
 
-    <h1 class="results-container__title" > You Final Score is : </h1>
-    <p class="results-container__score" appDisplayScore  [finalScore]='finalScore'  
+    <h1 class="resultsContainer__title" > You Final Score is : </h1>
+    <p class="resultsContainer__score" appDisplayScore  [finalScore]='finalScore'  
         [overallScore]='overallScore' >  {{ finalScoreInPercentage }} %
     </p>
 
-    <div class="results-container__buttons-container">
-        <button type="button"  class="buttonMain answers-button"    (click)='onShowAnswers()'>  Check out Answers </button>
-        <button type="button"  class="buttonMain play-again-button" (click)='onPlayAgain()'>  play again </button>
+    <div class="resultsContainer__buttonsWrapper">
+        <button type="button"  class="buttonMain answersButton"    (click)='onShowAnswers()'>  Check out Answers </button>
+        <button type="button"  class="buttonMain playAgainButton"  (click)='onPlayAgain()'>  play again </button>
     </div>
    
 </div>
 
 
 
-<div class="answers-container" *ngIf='showAnswers'>
-
-    <button class="buttonMain go-back-button" (click)='goBackToScore()'>
-        <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>
-        <span class="go-back-button__text"> Go back</span>
+<div class="answersContainer" *ngIf='showAnswers'>
+    <button class="buttonMain goBackButton" (click)='goBackToScore()'>
+        <svg class="goBackButton__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>
+        <span class="goBackButton__text"> Go back</span>
     </button>
     
     <table class="table">
-
         <thead class="table__head">
             <tr>
                 <th> &nbsp; </th>
@@ -35,14 +33,13 @@
         </thead>
 
         <tbody class="table__body">
-
              <tr *ngFor='let questionObj of questionsObjArray; let i = index'>
                 <td> {{ i + 1 }} </td>
                 <td> {{ questionObj.question }} </td>
                 <td> {{ questionObj.correctAnswer }} </td>
                 <td> {{ questionObj.chosenAnswer }} </td>
-                <td *ngIf='questionObj.correctAnswer !== questionObj.chosenAnswer' > <svg class="x-logo">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>  
-                <td *ngIf='questionObj.correctAnswer === questionObj.chosenAnswer'> <svg class="checkmark-logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>  
+                <td *ngIf='questionObj.correctAnswer !== questionObj.chosenAnswer' > <svg class="xIcon">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>  
+                <td *ngIf='questionObj.correctAnswer === questionObj.chosenAnswer'> <svg class="checkmarkIcon" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>  
             </tr>  
             
             <!-- <tr>
@@ -206,10 +203,7 @@
             </tr>   
   -->
         </tbody>
-
     </table>
-
-
-      
+ 
 </div>
 

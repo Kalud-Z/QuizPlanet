@@ -14,7 +14,6 @@ export class DisplayScoreDirective implements OnInit {  //######################
 
   ngOnInit() {
     this.displayFinalScore(this.finalScore , this.overallScore);
-
   }
   
   displayFinalScore(finalScore : number , maxScore : number) {
@@ -47,7 +46,6 @@ export class DisplayScoreDirective implements OnInit {  //######################
               }
           }
       }(times, 0);
-
       window.setTimeout(internalCallback, factor);
   }
 

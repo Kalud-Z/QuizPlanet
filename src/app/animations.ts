@@ -29,11 +29,9 @@ export const nextQuestionTrigger = trigger('nextQuestionState', [
     transition('* => *' , [
                 style({
                     opacity : 0
-                    // 'background-color' : 'red'
                 }),
                 animate('.35s' , style({
                     opacity : 1
-                    // 'background-color' : 'red'
                 }))
     ]), //transition
 ])
@@ -81,7 +79,7 @@ export const introImagesTrigger = trigger('introImagesState', [
 
 export const titleTrigger = trigger('titleState', [
     transition(':enter' , [
-       query('.AppTitle__letter' , [
+       query('.appTitle__letter' , [
         animate('.1s  .5s' , style({
             'margin-right': '0rem !important'
         }))

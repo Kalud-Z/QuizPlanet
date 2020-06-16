@@ -18,7 +18,7 @@ export class TrackBarDirective { //#############################################
   this.timer = this.currentQuestionIndex === 0 ? 500 : 0 ;
 
   setTimeout(() => {
-    this.renderer.addClass(this.trackBarChildren[this.currentQuestionIndex], 'fill-bar');
+    this.renderer.addClass(this.trackBarChildren[this.currentQuestionIndex], 'fillBar');
   }, this.timer);
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { DataService } from '../data.service';
 import { questionObj } from '../questions/questionObj.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -11,11 +12,10 @@ import { Router } from '@angular/router';
 
 // ###########################################################################################################################################################
 export class ResultsComponent implements OnInit {  //#############################################################################################################
+  questionsObjArray : questionObj[];
   overallScore : number
   finalScore : number
   finalScoreInPercentage : number
-
-  questionsObjArray : questionObj[];
 
   showAnswers = false;
 
@@ -33,9 +33,7 @@ export class ResultsComponent implements OnInit {  //###########################
   }
 
   onShowAnswers() { this.showAnswers = true }
-
   goBackToScore() { this.showAnswers = false }
-
 
 // ##########################################################################################################################################################
 } //##########################################################################################################################################################

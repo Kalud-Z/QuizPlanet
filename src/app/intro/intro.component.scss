@@ -154,12 +154,12 @@
             cursor : pointer;
         }
 
-        &:hover &__image {
+        &:hover  .catWrapper__image {
             -webkit-filter: brightness(50%);
                     filter: brightness(50%);
         }
 
-        &:hover &__name { opacity : 1 }
+        &:hover  .catWrapper__name { opacity : 1 }
   
         &-selected   {
             & .catWrapper__name { opacity : 1 }
