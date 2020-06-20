@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-import { Subject, BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { questionObj } from './questions/questionObj.model';
+import { SynchUIService } from './synch-ui.service';
 
 
 
@@ -20,11 +20,8 @@ export class DataService { //###################################################
   finalScore : number;
   overallScore : number;
 
-  readyToDisplayQuestions = new Subject<boolean>();
-  isLoadingSubject        = new BehaviorSubject<boolean>(false);
-
   
-  constructor(private http: HttpClient)  {}
+  constructor(private http: HttpClient , private synchUIService : SynchUIService)  {}
 
   resetData() { this.questionsAndOptions = [] }
 
@@ -78,7 +75,7 @@ export class DataService { //###################################################
       this.questionsAndOptions.push(questionObjTemp);
     })
 
-    this.readyToDisplayQuestions.next(true);
+    this.synchUIService.readyToDisplayQuestions$.next(true);
     this.overallScore = this.questionsAndOptions.length * environment.pointsPerCorrectAnswer;
   }
     
@@ -96,6 +93,10 @@ export class DataService { //###################################################
 }   //#####################################################################################################################################################
 // ###########################################################################################################################################################
   
+
+
+
+
 
 
 

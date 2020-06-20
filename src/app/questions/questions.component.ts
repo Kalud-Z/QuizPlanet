@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { questionObj } from './questionObj.model';
 import { nextQuestionTrigger } from '../animations';
+import { SynchUIService } from '../synch-ui.service';
 
 @Component({
   selector: 'app-questions',
@@ -23,7 +24,10 @@ export class QuestionsComponent implements OnInit {  //#########################
 
   isLoading = false;
 
-  constructor(private dataService : DataService, private router : Router) { }
+  constructor(private dataService : DataService,
+              private router : Router,
+              private synchUIService : SynchUIService
+              ) { }
 
   ngOnInit(): void {
     this.numberOfQuestions = this.dataService.numOfQuestions;
@@ -70,7 +74,7 @@ export class QuestionsComponent implements OnInit {  //#########################
 
   toggleIsLoading(value : boolean) {
     this.isLoading = value;
-    this.dataService.isLoadingSubject.next(this.isLoading);
+    this.synchUIService.isLoading$.next(this.isLoading);
   }
 
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { introPageTrigger, introImagesTrigger } from '../animations';
 
 import { DataService } from '../data.service';
+import { SynchUIService } from '../synch-ui.service';
 
 
 @Component({
@@ -30,10 +31,13 @@ export class IntroComponent implements OnInit { //##############################
     catId   : [21 , 27 , 18 , 11, 12 , 24]
   }
 
-  constructor(private dataService : DataService, private router : Router ) { }
+  constructor(private dataService : DataService,
+              private router : Router,
+              private synchUIService : SynchUIService
+              ) { }
 
   ngOnInit(): void {
-    this.dataService.readyToDisplayQuestions.subscribe(data => {
+    this.synchUIService.readyToDisplayQuestions$.subscribe(data => {
       if(data === true) {
         this.toggleIsLoading(false);
         this.router.navigate(['/questions']);
@@ -43,7 +47,7 @@ export class IntroComponent implements OnInit { //##############################
 
   toggleIsLoading(value : boolean) {
     this.isLoading = value;
-    this.dataService.isLoadingSubject.next(this.isLoading);
+    this.synchUIService.isLoading$.next(this.isLoading);
   }
 
   toggleTimer() { this.timerOn = !this.timerOn }

@@ -1,3 +1,8 @@
 
 
-clean-up and add to portfolio
+upon reload go back to intro page.
+
+
+
+
+

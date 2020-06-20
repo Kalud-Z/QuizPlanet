@@ -1,9 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 
-import { titleTrigger, zipperTrigger } from './animations';
 import { environment } from 'src/environments/environment';
 
-import { DataService } from './data.service';
+import { titleTrigger, zipperTrigger } from './animations';
+import { SynchUIService } from './synch-ui.service';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +19,7 @@ import { DataService } from './data.service';
 // ###########################################################################################################################################################
 export class AppComponent implements OnInit { //##############################################################################################################################
   @HostBinding('@titleState') routeAnimationn = true;
+
   introLoading = true;
   isLoading = false;
   openDoorNow = false;
@@ -28,12 +29,10 @@ export class AppComponent implements OnInit { //################################
 
   introAnimationOn = environment.introAnimation;
   
-  constructor(private dataStorage : DataService) {}
+  constructor(private synchUIService: SynchUIService) {}
 
   ngOnInit() {
-    this.dataStorage.isLoadingSubject.subscribe(data => {
-      this.isLoading = data;
-    })
+    this.synchUIService.isLoading$.subscribe(data => { this.isLoading = data })
   
     setTimeout(() => { this.openDoorNow = true }, 4500);
     setTimeout(() => { this.animateZipperNow = true }, 1500);
