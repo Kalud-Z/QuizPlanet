@@ -272,8 +272,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/results/results.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/results/results.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -432,7 +432,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/results/results.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/results/results.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -459,7 +459,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/results/results.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/results/results.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -486,7 +486,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/results/results.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/results/results.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -513,7 +513,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/results/results.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/results/results.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -553,9 +553,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
 import { DataService } from &#x27;../data.service&#x27;;
 import { questionObj } from &#x27;../questions/questionObj.model&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-results&#x27;,
@@ -565,11 +566,10 @@ import { Router } from &#x27;@angular/router&#x27;;
 
 // ###########################################################################################################################################################
 export class ResultsComponent implements OnInit {  //#############################################################################################################
+  questionsObjArray : questionObj[];
   overallScore : number
   finalScore : number
   finalScoreInPercentage : number
-
-  questionsObjArray : questionObj[];
 
   showAnswers &#x3D; false;
 
@@ -587,9 +587,7 @@ export class ResultsComponent implements OnInit {  //###########################
   }
 
   onShowAnswers() { this.showAnswers &#x3D; true }
-
   goBackToScore() { this.showAnswers &#x3D; false }
-
 
 // ##########################################################################################################################################################
 } //##########################################################################################################################################################
@@ -600,31 +598,29 @@ export class ResultsComponent implements OnInit {  //###########################
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
-&lt;div class&#x3D;&quot;results-container&quot; *ngIf&#x3D;&#x27;!showAnswers&#x27;&gt; 
+&lt;div class&#x3D;&quot;resultsContainer&quot; *ngIf&#x3D;&#x27;!showAnswers&#x27;&gt; 
 
-    &lt;h1 class&#x3D;&quot;results-container__title&quot; &gt; You Final Score is : &lt;/h1&gt;
-    &lt;p class&#x3D;&quot;results-container__score&quot; appDisplayScore  [finalScore]&#x3D;&#x27;finalScore&#x27;  
+    &lt;h1 class&#x3D;&quot;resultsContainer__title&quot; &gt; You Final Score is : &lt;/h1&gt;
+    &lt;p class&#x3D;&quot;resultsContainer__score&quot; appDisplayScore  [finalScore]&#x3D;&#x27;finalScore&#x27;  
         [overallScore]&#x3D;&#x27;overallScore&#x27; &gt;  {{ finalScoreInPercentage }} %
     &lt;/p&gt;
 
-    &lt;div class&#x3D;&quot;results-container__buttons-container&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot;  class&#x3D;&quot;buttonMain answers-button&quot;    (click)&#x3D;&#x27;onShowAnswers()&#x27;&gt;  Check out Answers &lt;/button&gt;
-        &lt;button type&#x3D;&quot;button&quot;  class&#x3D;&quot;buttonMain play-again-button&quot; (click)&#x3D;&#x27;onPlayAgain()&#x27;&gt;  play again &lt;/button&gt;
+    &lt;div class&#x3D;&quot;resultsContainer__buttonsWrapper&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot;  class&#x3D;&quot;buttonMain answersButton&quot;    (click)&#x3D;&#x27;onShowAnswers()&#x27;&gt;  Check out Answers &lt;/button&gt;
+        &lt;button type&#x3D;&quot;button&quot;  class&#x3D;&quot;buttonMain playAgainButton&quot;  (click)&#x3D;&#x27;onPlayAgain()&#x27;&gt;  play again &lt;/button&gt;
     &lt;/div&gt;
    
 &lt;/div&gt;
 
 
 
-&lt;div class&#x3D;&quot;answers-container&quot; *ngIf&#x3D;&#x27;showAnswers&#x27;&gt;
-
-    &lt;button class&#x3D;&quot;buttonMain go-back-button&quot; (click)&#x3D;&#x27;goBackToScore()&#x27;&gt;
-        &lt;svg class&#x3D;&quot;go-back-button__logo&quot; &gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-arrow-left&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
-        &lt;span class&#x3D;&quot;go-back-button__text&quot;&gt; Go back&lt;/span&gt;
+&lt;div class&#x3D;&quot;answersContainer&quot; *ngIf&#x3D;&#x27;showAnswers&#x27;&gt;
+    &lt;button class&#x3D;&quot;buttonMain goBackButton&quot; (click)&#x3D;&#x27;goBackToScore()&#x27;&gt;
+        &lt;svg class&#x3D;&quot;goBackButton__logo&quot; &gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-arrow-left&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;span class&#x3D;&quot;goBackButton__text&quot;&gt; Go back&lt;/span&gt;
     &lt;/button&gt;
     
     &lt;table class&#x3D;&quot;table&quot;&gt;
-
         &lt;thead class&#x3D;&quot;table__head&quot;&gt;
             &lt;tr&gt;
                 &lt;th&gt; &amp;nbsp; &lt;/th&gt;
@@ -636,14 +632,13 @@ export class ResultsComponent implements OnInit {  //###########################
         &lt;/thead&gt;
 
         &lt;tbody class&#x3D;&quot;table__body&quot;&gt;
-
              &lt;tr *ngFor&#x3D;&#x27;let questionObj of questionsObjArray; let i &#x3D; index&#x27;&gt;
                 &lt;td&gt; {{ i + 1 }} &lt;/td&gt;
                 &lt;td&gt; {{ questionObj.question }} &lt;/td&gt;
                 &lt;td&gt; {{ questionObj.correctAnswer }} &lt;/td&gt;
                 &lt;td&gt; {{ questionObj.chosenAnswer }} &lt;/td&gt;
-                &lt;td *ngIf&#x3D;&#x27;questionObj.correctAnswer !&#x3D;&#x3D; questionObj.chosenAnswer&#x27; &gt; &lt;svg class&#x3D;&quot;x-logo&quot;&gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-x&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;/td&gt;  
-                &lt;td *ngIf&#x3D;&#x27;questionObj.correctAnswer &#x3D;&#x3D;&#x3D; questionObj.chosenAnswer&#x27;&gt; &lt;svg class&#x3D;&quot;checkmark-logo&quot; &gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-checkmark&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;/td&gt;  
+                &lt;td *ngIf&#x3D;&#x27;questionObj.correctAnswer !&#x3D;&#x3D; questionObj.chosenAnswer&#x27; &gt; &lt;svg class&#x3D;&quot;xIcon&quot;&gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-x&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;/td&gt;  
+                &lt;td *ngIf&#x3D;&#x27;questionObj.correctAnswer &#x3D;&#x3D;&#x3D; questionObj.chosenAnswer&#x27;&gt; &lt;svg class&#x3D;&quot;checkmarkIcon&quot; &gt;  &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-checkmark&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;/td&gt;  
             &lt;/tr&gt;  
             
             &lt;!-- &lt;tr&gt;
@@ -807,11 +802,8 @@ export class ResultsComponent implements OnInit {  //###########################
             &lt;/tr&gt;   
   --&gt;
         &lt;/tbody&gt;
-
     &lt;/table&gt;
-
-
-      
+ 
 &lt;/div&gt;
 
 </code></pre>
@@ -831,18 +823,20 @@ export class ResultsComponent implements OnInit {  //###########################
     overflow : hidden;
 }
 
-.results-container {
+
+
+.resultsContainer {
     background-color: #d9d9d9;
     width: 45vw;
     margin: 5% auto;
     font-size: 1rem;
     border:3px solid rgba(255, 0, 0, 0.432);
     border-radius: 1rem;
+    transform: scale(1);  //it fully grows upon showing up.
+
     padding-left: 2rem;
     padding-right: 2rem;
-    transform: scale(1);  //it fully grows upon showing up.
     transition: all 0.5s;
-
     display : grid;
     align-items: center;
     justify-content: center;
@@ -865,7 +859,7 @@ export class ResultsComponent implements OnInit {  //###########################
         font-family: &#x27;Merienda One&#x27;, cursive;
     }
 
-    &amp;__buttons-container {
+    &amp;__buttonsWrapper {
         width:99%;
         display: flex;
         justify-content: center;
@@ -876,59 +870,32 @@ export class ResultsComponent implements OnInit {  //###########################
 
 
 
-
-.answers-container {
-    position: relative;
-    border-radius: 0.3rem;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 255, 0.041); 
+.answersContainer {
     width: 77%;   
     height: 73vh;
-    overflow-y: scroll;
-
-    margin-top: 2rem;
+    border-radius: 0.3rem;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 255, 0.041);
     box-shadow: 0px 0px 5px 0px rgba(243,123,67,1);
+    margin-top: 2rem;
+
+    overflow-y: scroll;
+    position: relative;
 
     &amp; div { font-size : 5rem }
 
-
-    @include respond(phone) { 
-        height: 100%;
-        width: 90%;
-    }
+    @include respond(phone) {  height: 100%; width: 90% }
 }
 
-
-.chosen-answer-is-correct { color:green }
-
-.checkmark-logo { fill : green }
-
-.chosen-answer-is-incorrect { color:rgb(204, 7, 7) }
-
-.x-logo { fill : rgb(204, 7, 7) }
-
-
-.go-back-buttonContainer {
-    background-color: yellow;
-    width: 100%;
-    position: fixed;
-}
-
-
-
-
-
-
-//§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 
 .table {
-    text-align: center;
-    border-collapse: collapse;
-    font-size: 1.2rem;
     max-width: 90%;
     @include respond(phone) {  max-width: 99.5% }
     margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 
     &amp; th , &amp; td {
@@ -938,12 +905,12 @@ export class ResultsComponent implements OnInit {  //###########################
     } 
 
     &amp;__head tr {
+        z-index: 2222;
         background-color: #d9d9d9;
         text-align: center;
         font-weight: bold;
         font-size: 1.4rem;
         border-bottom:  1px solid black;
-        z-index: 2222;
 
         &amp; th { border-top:  1px solid black; }
         
@@ -958,29 +925,41 @@ export class ResultsComponent implements OnInit {  //###########################
             border-top: none;
             border-left: none;
         }
-     
     }
 
     &amp;__body tr {
         border-bottom: 1px solid black;
         background-color: rgba(255, 0, 0, 0.075);
 
+        .xIcon { fill : rgb(204, 7, 7) }
+        .checkmarkIcon { fill : green }
+
         &amp; td:last-child {
             font-size: 1.5rem;
             border-top : 1px solid black;
-            &amp; svg {
-                height: 1.5rem;
-                width: 1.5rem;
-            }
+            &amp; svg { height: 1.5rem; width: 1.5rem }
         }
 
-        td:nth-child(3){  color: green }
+        td:nth-child(3){ color: green }
     }
 
 }
 
 
 
+
+
+
+
+// .chosen-answer-is-correct { color:green }
+// .chosen-answer-is-incorrect { color:rgb(204, 7, 7) }
+
+/* 
+.go-back-buttonContainer {
+    background-color: yellow;
+    width: 100%;
+    position: fixed;
+} */
 
 
 </code></pre>
@@ -1011,7 +990,7 @@ export class ResultsComponent implements OnInit {  //###########################
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="results-container" *ngIf=\'!showAnswers\'>     <h1 class="results-container__title" > You Final Score is : </h1>    <p class="results-container__score" appDisplayScore  [finalScore]=\'finalScore\'          [overallScore]=\'overallScore\' >  {{ finalScoreInPercentage }} %    </p>    <div class="results-container__buttons-container">        <button type="button"  class="buttonMain answers-button"    (click)=\'onShowAnswers()\'>  Check out Answers </button>        <button type="button"  class="buttonMain play-again-button" (click)=\'onPlayAgain()\'>  play again </button>    </div>   </div><div class="answers-container" *ngIf=\'showAnswers\'>    <button class="buttonMain go-back-button" (click)=\'goBackToScore()\'>        <svg class="go-back-button__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>        <span class="go-back-button__text"> Go back</span>    </button>        <table class="table">        <thead class="table__head">            <tr>                <th> &nbsp; </th>                <th> The Question </th>                <th> Correct Answer </th>                <th> Your Answer </th>                <th> &nbsp; </th>            </tr>        </thead>        <tbody class="table__body">             <tr *ngFor=\'let questionObj of questionsObjArray; let i = index\'>                <td> {{ i + 1 }} </td>                <td> {{ questionObj.question }} </td>                <td> {{ questionObj.correctAnswer }} </td>                <td> {{ questionObj.chosenAnswer }} </td>                <td *ngIf=\'questionObj.correctAnswer !== questionObj.chosenAnswer\' > <svg class="x-logo">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>                  <td *ngIf=\'questionObj.correctAnswer === questionObj.chosenAnswer\'> <svg class="checkmark-logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>              </tr>                          <!-- <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>     -->        </tbody>    </table>      </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="resultsContainer" *ngIf=\'!showAnswers\'>     <h1 class="resultsContainer__title" > You Final Score is : </h1>    <p class="resultsContainer__score" appDisplayScore  [finalScore]=\'finalScore\'          [overallScore]=\'overallScore\' >  {{ finalScoreInPercentage }} %    </p>    <div class="resultsContainer__buttonsWrapper">        <button type="button"  class="buttonMain answersButton"    (click)=\'onShowAnswers()\'>  Check out Answers </button>        <button type="button"  class="buttonMain playAgainButton"  (click)=\'onPlayAgain()\'>  play again </button>    </div>   </div><div class="answersContainer" *ngIf=\'showAnswers\'>    <button class="buttonMain goBackButton" (click)=\'goBackToScore()\'>        <svg class="goBackButton__logo" >  <use xlink:href="/assets/symbol-defs.svg#icon-arrow-left"></use> </svg>        <span class="goBackButton__text"> Go back</span>    </button>        <table class="table">        <thead class="table__head">            <tr>                <th> &nbsp; </th>                <th> The Question </th>                <th> Correct Answer </th>                <th> Your Answer </th>                <th> &nbsp; </th>            </tr>        </thead>        <tbody class="table__body">             <tr *ngFor=\'let questionObj of questionsObjArray; let i = index\'>                <td> {{ i + 1 }} </td>                <td> {{ questionObj.question }} </td>                <td> {{ questionObj.correctAnswer }} </td>                <td> {{ questionObj.chosenAnswer }} </td>                <td *ngIf=\'questionObj.correctAnswer !== questionObj.chosenAnswer\' > <svg class="xIcon">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>                  <td *ngIf=\'questionObj.correctAnswer === questionObj.chosenAnswer\'> <svg class="checkmarkIcon" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>              </tr>                          <!-- <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                          <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>              <tr>                <td> %number% </td>                <td> %questioondsgsgsggsdhsdsdgsdhsbsdhdhdhd segsgstss stszszszsz zdruzdrudr rzedtuerrz wrzer% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>                         <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>             <tr>                <td> %number% </td>                <td> %questioon% </td>                <td> %correct-answer% </td>                <td> %chosen-answer% </td>                <td> %status% </td>            </tr>     -->        </tbody>    </table> </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlurredSurfaceComponent', 'selector': 'app-blurred-surface'},{'name': 'IntroComponent', 'selector': 'app-intro'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'ResultsComponent', 'selector': 'app-results'}];
     var DIRECTIVES = [{'name': 'BlockButtonDirective', 'selector': '[appBlockButton]'},{'name': 'DisplayScoreDirective', 'selector': '[appDisplayScore]'},{'name': 'IntroAnimationDirective', 'selector': '[appIntroAnimation]'},{'name': 'TrackBarDirective', 'selector': '[appTrackBar]'}];
     var ACTUAL_COMPONENT = {'name': 'ResultsComponent'};
