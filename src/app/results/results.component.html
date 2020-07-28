@@ -2,13 +2,11 @@
 <div class="resultsContainer" *ngIf='!showAnswers'> 
 
     <h1 class="resultsContainer__title" > You Final Score is : </h1>
-    <p class="resultsContainer__score" appDisplayScore  [finalScore]='finalScore'  
-        [overallScore]='overallScore' >  {{ finalScoreInPercentage }} %
-    </p>
+    <p class="resultsContainer__score" appDisplayScore [finalScore]='finalScore' [overallScore]='overallScore'> {{ finalScoreInPercentage }} % </p>
 
     <div class="resultsContainer__buttonsWrapper">
         <button type="button"  class="buttonMain answersButton"    (click)='onShowAnswers()'>  Check out Answers </button>
-        <button type="button"  class="buttonMain playAgainButton"  (click)='onPlayAgain()'>  play again </button>
+        <button type="button"  class="buttonMain playAgainButton"  (click)='onPlayAgain()'>    play again </button>
     </div>
    
 </div>
@@ -39,7 +37,7 @@
                 <td> {{ questionObj.correctAnswer }} </td>
                 <td> {{ questionObj.chosenAnswer }} </td>
                 <td *ngIf='questionObj.correctAnswer !== questionObj.chosenAnswer' > <svg class="xIcon">  <use xlink:href="/assets/symbol-defs.svg#icon-x"></use> </svg> </td>  
-                <td *ngIf='questionObj.correctAnswer === questionObj.chosenAnswer'> <svg class="checkmarkIcon" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>  
+                <td *ngIf='questionObj.correctAnswer === questionObj.chosenAnswer' > <svg class="checkmarkIcon" >  <use xlink:href="/assets/symbol-defs.svg#icon-checkmark"></use> </svg> </td>  
             </tr>  
             
             <!-- <tr>

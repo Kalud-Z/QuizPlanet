@@ -15,13 +15,11 @@ export class TrackBarDirective { //#############################################
   trackBarChildren  = this.trackBarContainer.childNodes;
 
   ngDoCheck() {
-  this.timer = this.currentQuestionIndex === 0 ? 500 : 0 ;
-
-  setTimeout(() => {
-    this.renderer.addClass(this.trackBarChildren[this.currentQuestionIndex], 'fillBar');
-  }, this.timer);
-
-}
+    this.timer = this.currentQuestionIndex === 0 ? 500 : 0 ;
+    setTimeout(() => {
+      this.renderer.addClass(this.trackBarChildren[this.currentQuestionIndex], 'fillBar');
+    }, this.timer);
+  }
 
 
   // ######################################################################################################################################################

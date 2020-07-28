@@ -42,12 +42,10 @@ export class DataService { //###################################################
     this.questionsAndOptions[id].chosenAnswer = answer;
   }
 
-  fetchQuestions(cat : number , numOfQuestions : number , diff : string){
+  fetchQuestions(cat : number , numOfQuestions : number , diff : string) {
       this.initData(cat , numOfQuestions , diff);
       this.http.get<questionObj[]>(`https://opentdb.com/api.php?amount=${this.numOfQuestions}&category=${this.chosenCat}&difficulty=${this.difficulty}`)
-      .subscribe(data => {
-        this.buildQuestionsArray(data);
-      })
+      .subscribe(data => { this.buildQuestionsArray(data) })
   }
 
   calculateScore() {

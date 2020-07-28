@@ -22,7 +22,7 @@
 </div>
 
 
-<div class="catsContainer" [ngClass]="{'catsContainer-blocked' : isLoading }">
+<div class="catsContainer" [ngClass]="{ 'catsContainer-blocked' : isLoading }">
     <figure class="catWrapper"  @introImagesState   [ngClass]="{ 'catWrapper-selected' : chosenCatName === 'sports' }"  (click)="catChosen('sports')">
         <caption class="catWrapper__name"> Sports </caption> <img src="../assets/img/sports.jpg" alt="sports" class="catWrapper__image">
     </figure>

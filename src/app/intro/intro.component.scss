@@ -33,13 +33,12 @@
     justify-self: center;
     margin-top: 2rem;
     grid-column: 1 / -1;
+    @include respond(phone-small) { grid-row: 1 / 2 }
     align-self: center;
 
     display: flex;
     align-items: stretch;
    
-    @include respond(phone-small) { grid-row: 1 / 2 }
-
     & > * {
         @include respond(phone-extra-small) {
             display : grid;

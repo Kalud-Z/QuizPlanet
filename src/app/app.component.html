@@ -1,6 +1,6 @@
 
 
-<div class='componentContainer' [ngClass]="{ loading : isLoading } ">
+<div class='componentContainer' [ngClass]="{ loading : isLoading }">
 
   <div class="mainContainer" [ngClass]="{ 'mainContainer-finalPosition' : adjustMainContainer}">
     <div class="mainContainer__head"  [ngClass]="{ 'mainContainer__head-extraPadding' : !introAnimationOn }" >
@@ -22,14 +22,11 @@
       </div> 
       
       <h1 class="mainContainer__head__title"  [ngClass]="{ removeElement : !introAnimationOn }" > Quiz Planet </h1>
-
-    </div> <!-- mainContainer__head -->
-
+    </div>
 
     <div class="mainContainer__body">
       <router-outlet></router-outlet>
     </div>
-
   </div>  <!-- main wrapper -->
 
 

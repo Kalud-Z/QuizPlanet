@@ -15,12 +15,11 @@ import { SynchUIService } from './synch-ui.service';
   ]
 })
 
-
 // ###########################################################################################################################################################
 export class AppComponent implements OnInit { //##############################################################################################################################
   @HostBinding('@titleState') routeAnimationn = true;
 
-  introLoading = true;
+  // introLoading = true;
   isLoading = false;
   openDoorNow = false;
   animateZipperNow = false;

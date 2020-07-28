@@ -32,13 +32,13 @@
     justify-content: stretch;
 
     &__child { 
-        background: linear-gradient(to right, rgba(245, 16, 176, 0.5) 50%, rgba(245, 16, 176, 0.089) 50%);  // blue is the starting color of the div. then it transition into red upon hover.
+        background: linear-gradient(to right, rgba(245, 16, 176, 0.5) 50%, rgba(245, 16, 176, 0.089) 50%);  // blue is the starting color of the div. then it transitions into red upon hover.
         background-size: 200% 100%;
         background-position:right bottom;
         transition:all 1s ease;
         flex : 1;
         border-right: 5px solid white;
-        &:last-child { border: none; }
+        &:last-child { border: none }
     }
 }
 
